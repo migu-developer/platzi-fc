@@ -1,0 +1,8 @@
+{
+  "name": "@platzi-fc/config-tailwind",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./tailwind.config.ts",
+  "types": "./tailwind.config.ts",
+  "files": ["tailwind.config.ts"]
+}

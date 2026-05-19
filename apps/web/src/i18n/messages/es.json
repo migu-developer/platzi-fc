@@ -1,0 +1,164 @@
+{
+  "common": {
+    "home": "Inicio",
+    "search": "Buscar",
+    "viewAll": "Ver todo",
+    "loadMore": "Cargar mas",
+    "back": "Volver",
+    "close": "Cerrar",
+    "all": "Todos",
+    "noResults": "No se encontraron resultados",
+    "loading": "Cargando..."
+  },
+  "nav": {
+    "matches": "Partidos",
+    "calendar": "Calendario",
+    "results": "Resultados",
+    "competitions": "Competiciones",
+    "team": "Equipo",
+    "firstTeam": "Primer Equipo",
+    "technicalStaff": "Cuerpo Tecnico",
+    "academy": "Cantera",
+    "news": "Noticias",
+    "latestNews": "Ultimas Noticias",
+    "officialStatements": "Comunicados",
+    "media": "Media",
+    "videos": "Videos",
+    "galleries": "Galerias",
+    "tickets": "Entradas",
+    "shop": "Tienda",
+    "club": "Club",
+    "history": "Historia",
+    "stadium": "Estadio",
+    "foundation": "Fundacion",
+    "contact": "Contacto",
+    "fans": "Fans",
+    "sponsors": "Sponsors",
+    "openMenu": "Abrir menu",
+    "becomeMember": "Hazte Socio"
+  },
+  "matches": {
+    "title": "Calendario y Resultados",
+    "description": "Todos los partidos de la temporada",
+    "upcoming": "Proximos",
+    "live": "En Vivo",
+    "finished": "Finalizado",
+    "scheduled": "Programado",
+    "suspended": "Suspendido",
+    "matchday": "Jornada",
+    "referee": "Arbitro",
+    "attendance": "espectadores",
+    "summary": "Resumen",
+    "stats": "Estadisticas",
+    "lineups": "Alineaciones",
+    "noUpcoming": "No hay partidos programados por el momento.",
+    "noResults": "No hay resultados disponibles por el momento.",
+    "summaryPending": "El resumen estara disponible una vez finalice el partido.",
+    "noEvents": "No hay eventos registrados para este partido."
+  },
+  "team": {
+    "title": "Plantilla",
+    "description": "Primer equipo y cuerpo tecnico de Platzi FC",
+    "players": "Jugadores",
+    "staff": "Cuerpo Tecnico",
+    "goalkeeper": "Portero",
+    "goalkeepers": "Porteros",
+    "defender": "Defensa",
+    "defenders": "Defensas",
+    "midfielder": "Centrocampista",
+    "midfielders": "Centrocampistas",
+    "forward": "Delantero",
+    "forwards": "Delanteros",
+    "allPositions": "Todas las posiciones",
+    "bio": "Biografia",
+    "statistics": "Estadisticas",
+    "career": "Trayectoria",
+    "socialMedia": "Redes Sociales",
+    "age": "anos",
+    "foot": "Pie Habil",
+    "leftFoot": "Izquierdo",
+    "rightFoot": "Derecho",
+    "bothFeet": "Ambidiestro"
+  },
+  "news": {
+    "title": "Noticias",
+    "description": "Las ultimas novedades y comunicados oficiales del club",
+    "official": "Comunicado Oficial",
+    "relatedArticles": "Noticias relacionadas",
+    "attachments": "Archivos adjuntos",
+    "categories": {
+      "club": "Club",
+      "equipo": "Equipo",
+      "academia": "Academia",
+      "femenino": "Femenino",
+      "comunidad": "Comunidad",
+      "tienda": "Tienda"
+    }
+  },
+  "media": {
+    "title": "Media",
+    "description": "Videos, galerias y contenido multimedia",
+    "videos": "Videos",
+    "galleries": "Galerias",
+    "photos": "fotos"
+  },
+  "tickets": {
+    "title": "Entradas",
+    "description": "Consigue tus entradas para los proximos partidos de Platzi FC",
+    "matchTickets": "Entradas para partidos",
+    "seasonsAndMemberships": "Abonos y Membresias",
+    "buy": "Comprar",
+    "digitalTickets": "Entradas digitales",
+    "digitalTicketsDesc": "Recibe tus entradas directamente en tu movil",
+    "stadiumInfo": "Info del estadio",
+    "needHelp": "Necesitas ayuda?"
+  },
+  "shop": {
+    "title": "Tienda Oficial",
+    "description": "Equipaciones, merchandising y productos oficiales de Platzi FC",
+    "buy": "Comprar",
+    "variants": "Variantes",
+    "noImage": "Sin imagen"
+  },
+  "sponsors": {
+    "title": "Sponsors y Patrocinadores",
+    "description": "Las marcas que confian en Platzi FC",
+    "becomeSponsor": "Quieres ser sponsor?",
+    "becomeSponsorDesc": "Contacta con nuestro departamento comercial para conocer las oportunidades de patrocinio.",
+    "tiers": {
+      "main": "Sponsor Principal",
+      "official": "Sponsors Oficiales",
+      "partner": "Partners",
+      "supplier": "Proveedores"
+    }
+  },
+  "search": {
+    "title": "Buscar",
+    "placeholder": "Buscar noticias, jugadores, partidos...",
+    "button": "Buscar",
+    "resultsFor": "resultado(s) para",
+    "noResults": "No se encontraron resultados para",
+    "tryOther": "Intenta con otros terminos de busqueda.",
+    "minChars": "Introduce un termino de busqueda (minimo 2 caracteres)."
+  },
+  "footer": {
+    "newsletter": "Newsletter Platzi FC",
+    "newsletterDesc": "Recibe noticias, resultados y ofertas en tu correo",
+    "subscribe": "Suscribir",
+    "emailPlaceholder": "tu@email.com",
+    "rights": "Todos los derechos reservados."
+  },
+  "errors": {
+    "notFound": "Pagina no encontrada",
+    "notFoundDesc": "La pagina que buscas no existe o ha sido movida.",
+    "backHome": "Volver al inicio",
+    "searchSite": "Buscar en el sitio",
+    "serverError": "Error",
+    "serverErrorDesc": "Algo salio mal. Estamos trabajando para solucionarlo.",
+    "tryAgain": "Intentar de nuevo"
+  },
+  "pagination": {
+    "previous": "Anterior",
+    "next": "Siguiente"
+  }
+}

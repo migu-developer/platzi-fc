@@ -1,0 +1,164 @@
+{
+  "common": {
+    "home": "Home",
+    "search": "Search",
+    "viewAll": "View all",
+    "loadMore": "Load more",
+    "back": "Back",
+    "close": "Close",
+    "all": "All",
+    "noResults": "No results found",
+    "loading": "Loading..."
+  },
+  "nav": {
+    "matches": "Matches",
+    "calendar": "Calendar",
+    "results": "Results",
+    "competitions": "Competitions",
+    "team": "Team",
+    "firstTeam": "First Team",
+    "technicalStaff": "Technical Staff",
+    "academy": "Academy",
+    "news": "News",
+    "latestNews": "Latest News",
+    "officialStatements": "Official Statements",
+    "media": "Media",
+    "videos": "Videos",
+    "galleries": "Galleries",
+    "tickets": "Tickets",
+    "shop": "Shop",
+    "club": "Club",
+    "history": "History",
+    "stadium": "Stadium",
+    "foundation": "Foundation",
+    "contact": "Contact",
+    "fans": "Fans",
+    "sponsors": "Sponsors",
+    "openMenu": "Open menu",
+    "becomeMember": "Become a Member"
+  },
+  "matches": {
+    "title": "Calendar & Results",
+    "description": "All matches this season",
+    "upcoming": "Upcoming",
+    "live": "Live",
+    "finished": "Finished",
+    "scheduled": "Scheduled",
+    "suspended": "Suspended",
+    "matchday": "Matchday",
+    "referee": "Referee",
+    "attendance": "spectators",
+    "summary": "Summary",
+    "stats": "Stats",
+    "lineups": "Lineups",
+    "noUpcoming": "No upcoming matches at the moment.",
+    "noResults": "No results available at the moment.",
+    "summaryPending": "The summary will be available once the match is over.",
+    "noEvents": "No events recorded for this match."
+  },
+  "team": {
+    "title": "Squad",
+    "description": "First team and coaching staff of Platzi FC",
+    "players": "Players",
+    "staff": "Coaching Staff",
+    "goalkeeper": "Goalkeeper",
+    "goalkeepers": "Goalkeepers",
+    "defender": "Defender",
+    "defenders": "Defenders",
+    "midfielder": "Midfielder",
+    "midfielders": "Midfielders",
+    "forward": "Forward",
+    "forwards": "Forwards",
+    "allPositions": "All positions",
+    "bio": "Biography",
+    "statistics": "Statistics",
+    "career": "Career",
+    "socialMedia": "Social Media",
+    "age": "years old",
+    "foot": "Preferred Foot",
+    "leftFoot": "Left",
+    "rightFoot": "Right",
+    "bothFeet": "Both"
+  },
+  "news": {
+    "title": "News",
+    "description": "Latest news and official statements from the club",
+    "official": "Official Statement",
+    "relatedArticles": "Related Articles",
+    "attachments": "Attachments",
+    "categories": {
+      "club": "Club",
+      "equipo": "Team",
+      "academia": "Academy",
+      "femenino": "Women",
+      "comunidad": "Community",
+      "tienda": "Shop"
+    }
+  },
+  "media": {
+    "title": "Media",
+    "description": "Videos, galleries and multimedia content",
+    "videos": "Videos",
+    "galleries": "Galleries",
+    "photos": "photos"
+  },
+  "tickets": {
+    "title": "Tickets",
+    "description": "Get your tickets for the next Platzi FC matches",
+    "matchTickets": "Match Tickets",
+    "seasonsAndMemberships": "Season Passes & Memberships",
+    "buy": "Buy",
+    "digitalTickets": "Digital Tickets",
+    "digitalTicketsDesc": "Get your tickets directly on your phone",
+    "stadiumInfo": "Stadium Info",
+    "needHelp": "Need help?"
+  },
+  "shop": {
+    "title": "Official Shop",
+    "description": "Kits, merchandise and official Platzi FC products",
+    "buy": "Buy",
+    "variants": "Variants",
+    "noImage": "No image"
+  },
+  "sponsors": {
+    "title": "Sponsors & Partners",
+    "description": "The brands that trust Platzi FC",
+    "becomeSponsor": "Want to become a sponsor?",
+    "becomeSponsorDesc": "Contact our commercial department to learn about sponsorship opportunities.",
+    "tiers": {
+      "main": "Main Sponsor",
+      "official": "Official Sponsors",
+      "partner": "Partners",
+      "supplier": "Suppliers"
+    }
+  },
+  "search": {
+    "title": "Search",
+    "placeholder": "Search news, players, matches...",
+    "button": "Search",
+    "resultsFor": "result(s) for",
+    "noResults": "No results found for",
+    "tryOther": "Try different search terms.",
+    "minChars": "Enter a search term (minimum 2 characters)."
+  },
+  "footer": {
+    "newsletter": "Platzi FC Newsletter",
+    "newsletterDesc": "Get news, results and offers in your inbox",
+    "subscribe": "Subscribe",
+    "emailPlaceholder": "you@email.com",
+    "rights": "All rights reserved."
+  },
+  "errors": {
+    "notFound": "Page not found",
+    "notFoundDesc": "The page you're looking for doesn't exist or has been moved.",
+    "backHome": "Back to home",
+    "searchSite": "Search the site",
+    "serverError": "Error",
+    "serverErrorDesc": "Something went wrong. We're working to fix it.",
+    "tryAgain": "Try again"
+  },
+  "pagination": {
+    "previous": "Previous",
+    "next": "Next"
+  }
+}
