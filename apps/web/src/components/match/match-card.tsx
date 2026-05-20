@@ -72,7 +72,10 @@ export function MatchCard({
                 )}
               >
                 {isLive && (
-                  <span className="mr-1 inline-block h-1.5 w-1.5 rounded-full bg-white" aria-hidden="true" />
+                  <span
+                    className="mr-1 inline-block h-1.5 w-1.5 rounded-full bg-white"
+                    aria-hidden="true"
+                  />
                 )}
                 {STATUS_LABELS[status]}
               </Badge>
@@ -83,10 +86,16 @@ export function MatchCard({
           <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-3">
             {/* Home */}
             <div className="text-right">
-              <p className={cn(
-                'text-sm font-semibold',
-                isFinished && homeScore != null && awayScore != null && homeScore > awayScore && 'text-club-primary',
-              )}>
+              <p
+                className={cn(
+                  'text-sm font-semibold',
+                  isFinished &&
+                    homeScore != null &&
+                    awayScore != null &&
+                    homeScore > awayScore &&
+                    'text-club-primary',
+                )}
+              >
                 {homeTeam.name}
               </p>
             </div>
@@ -105,10 +114,16 @@ export function MatchCard({
 
             {/* Away */}
             <div className="text-left">
-              <p className={cn(
-                'text-sm font-semibold',
-                isFinished && homeScore != null && awayScore != null && awayScore > homeScore && 'text-club-primary',
-              )}>
+              <p
+                className={cn(
+                  'text-sm font-semibold',
+                  isFinished &&
+                    homeScore != null &&
+                    awayScore != null &&
+                    awayScore > homeScore &&
+                    'text-club-primary',
+                )}
+              >
                 {awayTeam.name}
               </p>
             </div>

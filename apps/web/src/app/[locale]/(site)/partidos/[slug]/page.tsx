@@ -32,9 +32,25 @@ type MatchData = {
   competition?: { _id: string; name: string; slug?: { current: string } }
   season?: { _id: string; name: string }
   venue?: { _id: string; name: string; city?: string }
-  homeLineup?: Array<{ player?: { firstName: string; lastName: string }; position?: string; number?: number; starter: boolean }>
-  awayLineup?: Array<{ player?: { firstName: string; lastName: string }; position?: string; number?: number; starter: boolean }>
-  events?: Array<{ minute: number; type: string; player?: { firstName: string; lastName: string }; playerIn?: { firstName: string; lastName: string }; description?: string }>
+  homeLineup?: Array<{
+    player?: { firstName: string; lastName: string }
+    position?: string
+    number?: number
+    starter: boolean
+  }>
+  awayLineup?: Array<{
+    player?: { firstName: string; lastName: string }
+    position?: string
+    number?: number
+    starter: boolean
+  }>
+  events?: Array<{
+    minute: number
+    type: string
+    player?: { firstName: string; lastName: string }
+    playerIn?: { firstName: string; lastName: string }
+    description?: string
+  }>
   stats?: Array<{ label: string; home: number; away: number }>
 }
 
@@ -68,7 +84,9 @@ export default async function PartidoDetailPage({ params }: Props) {
   if (!match) notFound()
 
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://platzifc.com'
-  const hasLineups = (match.homeLineup && match.homeLineup.length > 0) || (match.awayLineup && match.awayLineup.length > 0)
+  const hasLineups =
+    (match.homeLineup && match.homeLineup.length > 0) ||
+    (match.awayLineup && match.awayLineup.length > 0)
   const hasEvents = match.events && match.events.length > 0
   const hasStats = match.stats && match.stats.length > 0
 
@@ -133,7 +151,9 @@ export default async function PartidoDetailPage({ params }: Props) {
             <div className="mt-4 flex flex-wrap items-center justify-center gap-4 text-xs text-club-accent/80">
               <span>{formatDateTime(match.datetime)}</span>
               {match.venue && <span>{match.venue.name}</span>}
-              {match.attendance != null && <span>{match.attendance.toLocaleString('es')} espectadores</span>}
+              {match.attendance != null && (
+                <span>{match.attendance.toLocaleString('es')} espectadores</span>
+              )}
               {match.referee && <span>Arbitro: {match.referee}</span>}
             </div>
           </CardContent>

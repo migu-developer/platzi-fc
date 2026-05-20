@@ -24,8 +24,7 @@ export default function ErrorPage({
         Algo salio mal
       </h1>
       <p className="mt-3 max-w-md text-lg text-gray-600">
-        Ha ocurrido un error inesperado. Por favor, intenta de nuevo o vuelve al
-        inicio.
+        Ha ocurrido un error inesperado. Por favor, intenta de nuevo o vuelve al inicio.
       </p>
       <div className="mt-8 flex flex-col gap-3 sm:flex-row">
         <Button

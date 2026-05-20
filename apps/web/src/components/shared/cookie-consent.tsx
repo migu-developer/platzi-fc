@@ -22,8 +22,7 @@ const DEFAULT_PREFERENCES: CookiePreferences = {
 export function CookieConsent() {
   const [visible, setVisible] = useState(false)
   const [showSettings, setShowSettings] = useState(false)
-  const [preferences, setPreferences] =
-    useState<CookiePreferences>(DEFAULT_PREFERENCES)
+  const [preferences, setPreferences] = useState<CookiePreferences>(DEFAULT_PREFERENCES)
 
   useEffect(() => {
     const consent = localStorage.getItem(STORAGE_KEY)
@@ -82,9 +81,9 @@ export function CookieConsent() {
                   Usamos cookies
                 </h3>
                 <p className="mt-1 text-sm text-muted-foreground">
-                  Utilizamos cookies para mejorar tu experiencia, analizar el
-                  trafico del sitio y personalizar el contenido. Puedes aceptar
-                  todas, rechazarlas o configurar tus preferencias.
+                  Utilizamos cookies para mejorar tu experiencia, analizar el trafico del sitio y
+                  personalizar el contenido. Puedes aceptar todas, rechazarlas o configurar tus
+                  preferencias.
                 </p>
               </div>
             </div>
@@ -93,9 +92,7 @@ export function CookieConsent() {
             {showSettings && (
               <div className="mt-4 rounded-lg border border-border p-4">
                 <div className="flex items-center justify-between">
-                  <h4 className="text-sm font-semibold">
-                    Configurar preferencias
-                  </h4>
+                  <h4 className="text-sm font-semibold">Configurar preferencias</h4>
                   <Button
                     variant="ghost"
                     size="icon-xs"

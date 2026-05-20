@@ -26,38 +26,31 @@ const ITEMS_PER_PAGE = 9
 
 type SearchParams = Promise<{ category?: string; page?: string }>
 
-export default async function NoticiasPage({
-  searchParams,
-}: {
-  searchParams: SearchParams
-}) {
+export default async function NoticiasPage({ searchParams }: { searchParams: SearchParams }) {
   const { category, page: pageParam } = await searchParams
   const currentPage = Math.max(1, Number(pageParam) || 1)
 
   // Fetch articles from Sanity
-  const allArticles = await client.fetch<
-    Array<{
-      _id: string
-      title: string
-      slug: { current: string }
-      publishedAt: string
-      category: string
-      featuredImage: { asset: { url: string } } | null
-      official: boolean
-    }>
-  >(ARTICLES_QUERY, {}, { next: { tags: ['article'] } }).catch(() => [])
+  const allArticles = await client
+    .fetch<
+      Array<{
+        _id: string
+        title: string
+        slug: { current: string }
+        publishedAt: string
+        category: string
+        featuredImage: { asset: { url: string } } | null
+        official: boolean
+      }>
+    >(ARTICLES_QUERY, {}, { next: { tags: ['article'] } })
+    .catch(() => [])
 
   // Filter by category
-  const filtered = category
-    ? allArticles.filter((a) => a.category === category)
-    : allArticles
+  const filtered = category ? allArticles.filter((a) => a.category === category) : allArticles
 
   // Paginate
   const totalPages = Math.max(1, Math.ceil(filtered.length / ITEMS_PER_PAGE))
-  const paginated = filtered.slice(
-    (currentPage - 1) * ITEMS_PER_PAGE,
-    currentPage * ITEMS_PER_PAGE,
-  )
+  const paginated = filtered.slice((currentPage - 1) * ITEMS_PER_PAGE, currentPage * ITEMS_PER_PAGE)
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">

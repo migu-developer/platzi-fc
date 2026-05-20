@@ -54,31 +54,50 @@ export function StandingsTable({ rows, highlightTeam }: StandingsTableProps) {
   return (
     <Card>
       <CardHeader>
-        <CardTitle className="font-(family-name:--font-heading)">
-          Clasificacion
-        </CardTitle>
+        <CardTitle className="font-(family-name:--font-heading)">Clasificacion</CardTitle>
       </CardHeader>
       <CardContent className="overflow-x-auto p-0">
         <table className="w-full text-sm" role="table">
           <thead>
             <tr className="border-b bg-muted/50 text-xs font-medium text-muted-foreground">
-              <th scope="col" className="px-3 py-2 text-center">#</th>
-              <th scope="col" className="px-3 py-2 text-left">Equipo</th>
-              <th scope="col" className="px-3 py-2 text-center">PJ</th>
-              <th scope="col" className="px-3 py-2 text-center">PG</th>
-              <th scope="col" className="px-3 py-2 text-center">PE</th>
-              <th scope="col" className="px-3 py-2 text-center">PP</th>
-              <th scope="col" className="px-3 py-2 text-center">GF</th>
-              <th scope="col" className="px-3 py-2 text-center">GC</th>
-              <th scope="col" className="px-3 py-2 text-center">DG</th>
-              <th scope="col" className="px-3 py-2 text-center font-bold">Pts</th>
-              <th scope="col" className="px-3 py-2 text-center">Forma</th>
+              <th scope="col" className="px-3 py-2 text-center">
+                #
+              </th>
+              <th scope="col" className="px-3 py-2 text-left">
+                Equipo
+              </th>
+              <th scope="col" className="px-3 py-2 text-center">
+                PJ
+              </th>
+              <th scope="col" className="px-3 py-2 text-center">
+                PG
+              </th>
+              <th scope="col" className="px-3 py-2 text-center">
+                PE
+              </th>
+              <th scope="col" className="px-3 py-2 text-center">
+                PP
+              </th>
+              <th scope="col" className="px-3 py-2 text-center">
+                GF
+              </th>
+              <th scope="col" className="px-3 py-2 text-center">
+                GC
+              </th>
+              <th scope="col" className="px-3 py-2 text-center">
+                DG
+              </th>
+              <th scope="col" className="px-3 py-2 text-center font-bold">
+                Pts
+              </th>
+              <th scope="col" className="px-3 py-2 text-center">
+                Forma
+              </th>
             </tr>
           </thead>
           <tbody>
             {rows.map((row, index) => {
-              const isHighlighted =
-                highlightTeam != null && row.team.name === highlightTeam
+              const isHighlighted = highlightTeam != null && row.team.name === highlightTeam
               const position = index + 1
 
               return (
@@ -86,7 +105,7 @@ export function StandingsTable({ rows, highlightTeam }: StandingsTableProps) {
                   key={row.team.slug?.current ?? row.team.name}
                   className={cn(
                     'border-b transition-colors last:border-b-0 hover:bg-muted/30',
-                    isHighlighted && 'bg-club-light font-semibold'
+                    isHighlighted && 'bg-club-light font-semibold',
                   )}
                 >
                   <td className="px-3 py-2.5 text-center text-xs text-muted-foreground">
@@ -107,12 +126,7 @@ export function StandingsTable({ rows, highlightTeam }: StandingsTableProps) {
                           {row.team.name.charAt(0)}
                         </span>
                       )}
-                      <span
-                        className={cn(
-                          'truncate',
-                          isHighlighted && 'text-club-primary'
-                        )}
-                      >
+                      <span className={cn('truncate', isHighlighted && 'text-club-primary')}>
                         {row.team.name}
                       </span>
                     </div>
@@ -124,9 +138,7 @@ export function StandingsTable({ rows, highlightTeam }: StandingsTableProps) {
                   <td className="px-3 py-2.5 text-center">{row.goalsFor}</td>
                   <td className="px-3 py-2.5 text-center">{row.goalsAgainst}</td>
                   <td className="px-3 py-2.5 text-center">
-                    {row.goalDifference > 0
-                      ? `+${row.goalDifference}`
-                      : row.goalDifference}
+                    {row.goalDifference > 0 ? `+${row.goalDifference}` : row.goalDifference}
                   </td>
                   <td className="px-3 py-2.5 text-center font-(family-name:--font-heading) font-bold">
                     {row.points}
@@ -138,7 +150,7 @@ export function StandingsTable({ rows, highlightTeam }: StandingsTableProps) {
                           key={i}
                           className={cn(
                             'inline-block h-2 w-2 rounded-full',
-                            FORM_COLORS[result] ?? 'bg-muted'
+                            FORM_COLORS[result] ?? 'bg-muted',
                           )}
                           title={FORM_LABELS[result] ?? result}
                           aria-label={FORM_LABELS[result] ?? result}

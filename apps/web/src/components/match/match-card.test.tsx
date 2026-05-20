@@ -3,13 +3,9 @@ import { render, screen, cleanup } from '@testing-library/react'
 import { MatchCard } from './match-card'
 
 vi.mock('next/link', () => ({
-  default: ({
-    children,
-    href,
-  }: {
-    children: React.ReactNode
-    href: string
-  }) => <a href={href}>{children}</a>,
+  default: ({ children, href }: { children: React.ReactNode; href: string }) => (
+    <a href={href}>{children}</a>
+  ),
 }))
 
 describe('MatchCard', () => {

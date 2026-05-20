@@ -28,11 +28,7 @@ export async function CmsPage({
   fallbackDescription,
 }: CmsPageProps) {
   const page = await client
-    .fetch<PageData>(
-      PAGE_BY_SECTION_QUERY,
-      { section },
-      { next: { tags: ['page'] } },
-    )
+    .fetch<PageData>(PAGE_BY_SECTION_QUERY, { section }, { next: { tags: ['page'] } })
     .catch(() => null)
 
   const title = page?.title || fallbackTitle
@@ -46,9 +42,7 @@ export async function CmsPage({
         <h1 className="font-(family-name:--font-heading) text-3xl font-bold md:text-4xl">
           {title}
         </h1>
-        {subtitle && (
-          <p className="mt-3 text-lg text-muted-foreground">{subtitle}</p>
-        )}
+        {subtitle && <p className="mt-3 text-lg text-muted-foreground">{subtitle}</p>}
 
         {page?.featuredImage?.asset && (
           <div className="relative mt-8 aspect-video overflow-hidden rounded-card">
@@ -71,7 +65,8 @@ export async function CmsPage({
               El contenido de esta pagina se gestionara desde Sanity CMS.
             </p>
             <p className="mt-2 text-sm text-muted-foreground">
-              Crea un documento de tipo &quot;Pagina&quot; con seccion &quot;{section}&quot; en el Studio.
+              Crea un documento de tipo &quot;Pagina&quot; con seccion &quot;{section}&quot; en el
+              Studio.
             </p>
           </div>
         )}
@@ -82,11 +77,7 @@ export async function CmsPage({
 
 export async function getCmsPageMetadata(section: string, fallbackTitle: string) {
   const page = await client
-    .fetch<PageData>(
-      PAGE_BY_SECTION_QUERY,
-      { section },
-      { next: { tags: ['page'] } },
-    )
+    .fetch<PageData>(PAGE_BY_SECTION_QUERY, { section }, { next: { tags: ['page'] } })
     .catch(() => null)
 
   return {

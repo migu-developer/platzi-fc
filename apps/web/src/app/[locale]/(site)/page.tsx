@@ -28,30 +28,44 @@ export default function HomePage() {
             Platzi FC
           </h1>
           <p className="mt-3 max-w-xl text-lg text-club-accent">
-            Bienvenido al sitio oficial del club. Consulta partidos, noticias,
-            entradas y mucho mas.
+            Bienvenido al sitio oficial del club. Consulta partidos, noticias, entradas y mucho mas.
           </p>
 
           {/* Placeholder next match widget */}
           <div className="mt-8 inline-flex items-center gap-6 rounded-xl bg-white/10 px-6 py-4 backdrop-blur-sm">
             <div className="text-center">
-              <p className="font-(family-name:--font-heading) text-lg font-bold text-white">Platzi FC</p>
+              <p className="font-(family-name:--font-heading) text-lg font-bold text-white">
+                Platzi FC
+              </p>
             </div>
             <div className="text-center">
-              <p className="font-(family-name:--font-heading) text-2xl font-bold text-club-secondary">vs</p>
+              <p className="font-(family-name:--font-heading) text-2xl font-bold text-club-secondary">
+                vs
+              </p>
               <p className="text-xs text-club-accent">Proximamente</p>
             </div>
             <div className="text-center">
-              <p className="font-(family-name:--font-heading) text-lg font-bold text-white">Rival FC</p>
+              <p className="font-(family-name:--font-heading) text-lg font-bold text-white">
+                Rival FC
+              </p>
             </div>
           </div>
 
           <div className="mt-8 flex flex-wrap gap-3">
-            <Button render={<Link href="/entradas" />} size="lg" className="bg-club-secondary text-club-dark hover:bg-club-secondary-light">
-                <Ticket className="mr-2 h-4 w-4" />
-                Comprar Entradas
+            <Button
+              render={<Link href="/entradas" />}
+              size="lg"
+              className="bg-club-secondary text-club-dark hover:bg-club-secondary-light"
+            >
+              <Ticket className="mr-2 h-4 w-4" />
+              Comprar Entradas
             </Button>
-            <Button render={<Link href="/partidos" />} size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10">
+            <Button
+              render={<Link href="/partidos" />}
+              size="lg"
+              variant="outline"
+              className="border-white/30 text-white hover:bg-white/10"
+            >
               Ver Calendario
             </Button>
           </div>
@@ -63,12 +77,48 @@ export default function HomePage() {
         <section>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {[
-              { title: 'Partidos', desc: 'Calendario y resultados', href: '/partidos', icon: Trophy, color: 'text-emerald-600' },
-              { title: 'Equipo', desc: 'Plantilla y cuerpo tecnico', href: '/equipo', icon: Users, color: 'text-blue-600' },
-              { title: 'Noticias', desc: 'Ultimas novedades', href: '/noticias', icon: Newspaper, color: 'text-orange-600' },
-              { title: 'Media', desc: 'Videos y galerias', href: '/media', icon: Play, color: 'text-purple-600' },
-              { title: 'Entradas', desc: 'Compra tus entradas', href: '/entradas', icon: Ticket, color: 'text-red-600' },
-              { title: 'Tienda', desc: 'Merchandising oficial', href: '/tienda', icon: ShoppingBag, color: 'text-amber-600' },
+              {
+                title: 'Partidos',
+                desc: 'Calendario y resultados',
+                href: '/partidos',
+                icon: Trophy,
+                color: 'text-emerald-600',
+              },
+              {
+                title: 'Equipo',
+                desc: 'Plantilla y cuerpo tecnico',
+                href: '/equipo',
+                icon: Users,
+                color: 'text-blue-600',
+              },
+              {
+                title: 'Noticias',
+                desc: 'Ultimas novedades',
+                href: '/noticias',
+                icon: Newspaper,
+                color: 'text-orange-600',
+              },
+              {
+                title: 'Media',
+                desc: 'Videos y galerias',
+                href: '/media',
+                icon: Play,
+                color: 'text-purple-600',
+              },
+              {
+                title: 'Entradas',
+                desc: 'Compra tus entradas',
+                href: '/entradas',
+                icon: Ticket,
+                color: 'text-red-600',
+              },
+              {
+                title: 'Tienda',
+                desc: 'Merchandising oficial',
+                href: '/tienda',
+                icon: ShoppingBag,
+                color: 'text-amber-600',
+              },
             ].map((item) => (
               <Link key={item.href} href={item.href}>
                 <Card className="group transition-shadow hover:shadow-md">
@@ -101,7 +151,9 @@ export default function HomePage() {
               <Card key={i} className="overflow-hidden">
                 <div className="aspect-video bg-muted" />
                 <CardContent className="p-4">
-                  <Badge variant="secondary" className="mb-2">Club</Badge>
+                  <Badge variant="secondary" className="mb-2">
+                    Club
+                  </Badge>
                   <h3 className="font-(family-name:--font-heading) text-sm font-bold">
                     Noticia de ejemplo {i}
                   </h3>
@@ -140,9 +192,39 @@ export default function HomePage() {
                   </thead>
                   <tbody>
                     {[
-                      { pos: 1, name: 'Platzi FC', pj: 10, pg: 7, pe: 2, pp: 1, dg: '+12', pts: 23, highlight: true },
-                      { pos: 2, name: 'Equipo B', pj: 10, pg: 6, pe: 3, pp: 1, dg: '+8', pts: 21, highlight: false },
-                      { pos: 3, name: 'Equipo C', pj: 10, pg: 6, pe: 2, pp: 2, dg: '+6', pts: 20, highlight: false },
+                      {
+                        pos: 1,
+                        name: 'Platzi FC',
+                        pj: 10,
+                        pg: 7,
+                        pe: 2,
+                        pp: 1,
+                        dg: '+12',
+                        pts: 23,
+                        highlight: true,
+                      },
+                      {
+                        pos: 2,
+                        name: 'Equipo B',
+                        pj: 10,
+                        pg: 6,
+                        pe: 3,
+                        pp: 1,
+                        dg: '+8',
+                        pts: 21,
+                        highlight: false,
+                      },
+                      {
+                        pos: 3,
+                        name: 'Equipo C',
+                        pj: 10,
+                        pg: 6,
+                        pe: 2,
+                        pp: 2,
+                        dg: '+6',
+                        pts: 20,
+                        highlight: false,
+                      },
                     ].map((row) => (
                       <tr
                         key={row.pos}
@@ -176,7 +258,10 @@ export default function HomePage() {
                   Asegura tu lugar en el proximo partido
                 </p>
               </div>
-              <Button render={<Link href="/entradas" />} className="mt-2 bg-club-secondary text-club-dark hover:bg-club-secondary-light">
+              <Button
+                render={<Link href="/entradas" />}
+                className="mt-2 bg-club-secondary text-club-dark hover:bg-club-secondary-light"
+              >
                 Comprar Entradas
               </Button>
             </CardContent>
@@ -186,12 +271,15 @@ export default function HomePage() {
             <CardContent className="flex flex-col items-start gap-4 p-6">
               <ShoppingBag className="h-8 w-8 text-club-primary" />
               <div>
-                <h2 className="font-(family-name:--font-heading) text-xl font-bold text-club-dark">Tienda Oficial</h2>
-                <p className="mt-1 text-sm text-muted-foreground">
-                  Camisetas, accesorios y mas
-                </p>
+                <h2 className="font-(family-name:--font-heading) text-xl font-bold text-club-dark">
+                  Tienda Oficial
+                </h2>
+                <p className="mt-1 text-sm text-muted-foreground">Camisetas, accesorios y mas</p>
               </div>
-              <Button render={<Link href="/tienda" />} className="mt-2 bg-club-primary text-white hover:bg-club-primary-light">
+              <Button
+                render={<Link href="/tienda" />}
+                className="mt-2 bg-club-primary text-white hover:bg-club-primary-light"
+              >
                 Ir a la Tienda
               </Button>
             </CardContent>

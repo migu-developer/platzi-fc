@@ -4,6 +4,10 @@ node_modules/
 .pnp.js
 .pnp.cjs
 
+# pnpm
+.pnpm-store/
+.pnpm/
+
 # testing
 coverage/
 test-results/
@@ -15,6 +19,7 @@ out/
 
 # sanity
 dist/
+.sanity/
 
 # production
 build/

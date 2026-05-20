@@ -51,11 +51,7 @@ export function NewsletterCta() {
                 disabled={isPending}
                 className="bg-club-primary text-white hover:bg-club-primary-light"
               >
-                {isPending ? (
-                  <Loader2 className="h-4 w-4 animate-spin" />
-                ) : (
-                  'Suscribir'
-                )}
+                {isPending ? <Loader2 className="h-4 w-4 animate-spin" /> : 'Suscribir'}
               </Button>
             </form>
             {state && !state.success && (

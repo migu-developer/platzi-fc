@@ -55,9 +55,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
       const existing = prev.items.find((i) => i.id === item.id && i.variant === item.variant)
       const items = existing
         ? prev.items.map((i) =>
-            i.id === item.id && i.variant === item.variant
-              ? { ...i, quantity: i.quantity + 1 }
-              : i,
+            i.id === item.id && i.variant === item.variant ? { ...i, quantity: i.quantity + 1 } : i,
           )
         : [...prev.items, { ...item, quantity: 1 }]
       return { items, updatedAt: new Date().toISOString() }
@@ -71,16 +69,19 @@ export function CartProvider({ children }: { children: ReactNode }) {
     }))
   }, [])
 
-  const updateQuantity = useCallback((id: string, quantity: number) => {
-    if (quantity <= 0) {
-      removeItem(id)
-      return
-    }
-    setCart((prev) => ({
-      items: prev.items.map((i) => (i.id === id ? { ...i, quantity } : i)),
-      updatedAt: new Date().toISOString(),
-    }))
-  }, [removeItem])
+  const updateQuantity = useCallback(
+    (id: string, quantity: number) => {
+      if (quantity <= 0) {
+        removeItem(id)
+        return
+      }
+      setCart((prev) => ({
+        items: prev.items.map((i) => (i.id === id ? { ...i, quantity } : i)),
+        updatedAt: new Date().toISOString(),
+      }))
+    },
+    [removeItem],
+  )
 
   const clearCart = useCallback(() => {
     setCart({ items: [], updatedAt: new Date().toISOString() })
@@ -90,7 +91,9 @@ export function CartProvider({ children }: { children: ReactNode }) {
   const total = cart.items.reduce((sum, i) => sum + i.price * i.quantity, 0)
 
   return (
-    <CartContext.Provider value={{ cart, addItem, removeItem, updateQuantity, clearCart, itemCount, total }}>
+    <CartContext.Provider
+      value={{ cart, addItem, removeItem, updateQuantity, clearCart, itemCount, total }}
+    >
       {children}
     </CartContext.Provider>
   )

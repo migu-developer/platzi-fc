@@ -16,8 +16,8 @@ export default function NotFoundPage() {
         Pagina no encontrada
       </h1>
       <p className="mt-3 max-w-md text-lg text-gray-600">
-        Lo sentimos, la pagina que buscas no existe o ha sido movida. Puedes
-        volver al inicio o intentar una busqueda.
+        Lo sentimos, la pagina que buscas no existe o ha sido movida. Puedes volver al inicio o
+        intentar una busqueda.
       </p>
       <div className="mt-8 flex flex-col gap-3 sm:flex-row">
         <Button

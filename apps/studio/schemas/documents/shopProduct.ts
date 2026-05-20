@@ -28,8 +28,19 @@ export const shopProduct = defineType({
     },
     { name: 'variants', title: 'Variantes', type: 'array', of: [{ type: 'productVariant' }] },
     { name: 'checkoutUrl', title: 'URL de Compra', type: 'url' },
-    { name: 'tags', title: 'Tags', type: 'array', of: [{ type: 'string' }], options: { layout: 'tags' } },
-    { name: 'relatedPlayer', title: 'Jugador Relacionado', type: 'reference', to: [{ type: 'player' }] },
+    {
+      name: 'tags',
+      title: 'Tags',
+      type: 'array',
+      of: [{ type: 'string' }],
+      options: { layout: 'tags' },
+    },
+    {
+      name: 'relatedPlayer',
+      title: 'Jugador Relacionado',
+      type: 'reference',
+      to: [{ type: 'player' }],
+    },
   ],
   preview: {
     select: { title: 'name', category: 'category', media: 'images.0' },

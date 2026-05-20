@@ -39,7 +39,13 @@ export function CartContent() {
               {/* Image */}
               <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-md bg-muted">
                 {item.image ? (
-                  <Image src={item.image} alt={item.name} fill className="object-cover" sizes="80px" />
+                  <Image
+                    src={item.image}
+                    alt={item.name}
+                    fill
+                    className="object-cover"
+                    sizes="80px"
+                  />
                 ) : (
                   <div className="flex h-full items-center justify-center text-muted-foreground">
                     <ShoppingBag className="h-6 w-6" />
@@ -49,12 +55,13 @@ export function CartContent() {
 
               {/* Info */}
               <div className="flex-1 min-w-0">
-                <Link href={item.type === 'product' ? `/tienda/${item.slug}` : '/entradas'} className="text-sm font-semibold hover:text-club-primary">
+                <Link
+                  href={item.type === 'product' ? `/tienda/${item.slug}` : '/entradas'}
+                  className="text-sm font-semibold hover:text-club-primary"
+                >
                   {item.name}
                 </Link>
-                {item.variant && (
-                  <p className="text-xs text-muted-foreground">{item.variant}</p>
-                )}
+                {item.variant && <p className="text-xs text-muted-foreground">{item.variant}</p>}
                 <p className="mt-1 font-(family-name:--font-heading) text-sm font-bold text-club-primary">
                   {item.price} {item.currency}
                 </p>
@@ -98,7 +105,12 @@ export function CartContent() {
         ))}
 
         <div className="flex justify-end">
-          <Button variant="ghost" size="sm" onClick={clearCart} className="text-xs text-muted-foreground">
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={clearCart}
+            className="text-xs text-muted-foreground"
+          >
             Vaciar carrito
           </Button>
         </div>
@@ -123,7 +135,9 @@ export function CartContent() {
             <Separator className="my-3" />
             <div className="flex justify-between font-bold">
               <span>Total</span>
-              <span className="font-(family-name:--font-heading) text-lg text-club-primary">{total.toFixed(2)} EUR</span>
+              <span className="font-(family-name:--font-heading) text-lg text-club-primary">
+                {total.toFixed(2)} EUR
+              </span>
             </div>
             <Button className="mt-4 w-full bg-club-primary text-white hover:bg-club-primary-light">
               Proceder al pago

@@ -16,8 +16,7 @@ import { formatDate } from '@/lib/utils/format'
 
 export const metadata: Metadata = {
   title: 'Media',
-  description:
-    'Videos, galerias de fotos y contenido multimedia oficial de Platzi FC.',
+  description: 'Videos, galerias de fotos y contenido multimedia oficial de Platzi FC.',
 }
 
 type Video = {
@@ -65,12 +64,8 @@ export default async function MediaPage({
   const currentPage = Math.max(1, parseInt(page ?? '1', 10) || 1)
 
   const [allVideos, galleries] = await Promise.all([
-    client
-      .fetch<Video[]>(VIDEOS_QUERY, {}, { next: { tags: ['video'] } })
-      .catch(() => []),
-    client
-      .fetch<Gallery[]>(GALLERIES_QUERY, {}, { next: { tags: ['gallery'] } })
-      .catch(() => []),
+    client.fetch<Video[]>(VIDEOS_QUERY, {}, { next: { tags: ['video'] } }).catch(() => []),
+    client.fetch<Gallery[]>(GALLERIES_QUERY, {}, { next: { tags: ['gallery'] } }).catch(() => []),
   ])
 
   // Filter videos by category if provided
@@ -102,10 +97,7 @@ export default async function MediaPage({
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
       <Breadcrumbs items={[{ label: 'Media' }]} />
 
-      <SectionHeader
-        title="Media"
-        description="Videos, galerias y contenido multimedia"
-      />
+      <SectionHeader title="Media" description="Videos, galerias y contenido multimedia" />
 
       <div className="mt-8">
         <Tabs defaultValue="videos">
@@ -145,9 +137,7 @@ export default async function MediaPage({
               </>
             ) : (
               <div className="mt-6 rounded-card border border-dashed border-border p-12 text-center">
-                <p className="text-muted-foreground">
-                  No hay videos disponibles por el momento.
-                </p>
+                <p className="text-muted-foreground">No hay videos disponibles por el momento.</p>
                 <p className="mt-2 text-sm text-muted-foreground">
                   El contenido se cargara desde Sanity CMS una vez configurado el proyecto.
                 </p>
@@ -160,10 +150,7 @@ export default async function MediaPage({
               <>
                 <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                   {paginatedGalleries.map((gallery) => (
-                    <Link
-                      key={gallery._id}
-                      href={`/media/galerias/${gallery.slug.current}`}
-                    >
+                    <Link key={gallery._id} href={`/media/galerias/${gallery.slug.current}`}>
                       <Card className="group overflow-hidden transition-shadow hover:shadow-md">
                         <div className="relative aspect-video bg-muted">
                           {gallery.thumbnail ? (
@@ -206,9 +193,7 @@ export default async function MediaPage({
               </>
             ) : (
               <div className="mt-6 rounded-card border border-dashed border-border p-12 text-center">
-                <p className="text-muted-foreground">
-                  No hay galerias disponibles por el momento.
-                </p>
+                <p className="text-muted-foreground">No hay galerias disponibles por el momento.</p>
                 <p className="mt-2 text-sm text-muted-foreground">
                   El contenido se cargara desde Sanity CMS una vez configurado el proyecto.
                 </p>

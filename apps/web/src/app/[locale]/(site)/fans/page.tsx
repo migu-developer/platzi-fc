@@ -96,10 +96,7 @@ export default async function FansPage() {
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
       <Breadcrumbs items={[{ label: 'Fans y Socios' }]} />
 
-      <SectionHeader
-        title="Fans y Socios"
-        description="Unete a la comunidad de Platzi FC"
-      />
+      <SectionHeader title="Fans y Socios" description="Unete a la comunidad de Platzi FC" />
 
       {/* ── Hero Banner ────────────────────────────────── */}
       <section className="mt-8 rounded-xl bg-club-primary px-6 py-12 text-center text-white sm:px-12">
@@ -107,8 +104,8 @@ export default async function FansPage() {
           Se parte de Platzi FC
         </h2>
         <p className="mx-auto mt-3 max-w-2xl text-lg text-white/80">
-          Accede a beneficios exclusivos, descuentos en la tienda, entradas
-          preferenciales y mucho mas siendo socio del club.
+          Accede a beneficios exclusivos, descuentos en la tienda, entradas preferenciales y mucho
+          mas siendo socio del club.
         </p>
         <div className="mt-6">
           <Button
@@ -134,11 +131,7 @@ export default async function FansPage() {
                     <CardTitle className="font-(family-name:--font-heading) text-lg font-bold">
                       {plan.name}
                     </CardTitle>
-                    <Badge
-                      className={
-                        LEVEL_COLORS[plan.level] ?? 'bg-muted text-foreground'
-                      }
-                    >
+                    <Badge className={LEVEL_COLORS[plan.level] ?? 'bg-muted text-foreground'}>
                       {levelLabel(plan.level)}
                     </Badge>
                   </div>
@@ -164,11 +157,7 @@ export default async function FansPage() {
                     <Button
                       className="w-full bg-club-primary text-white hover:bg-club-primary-light"
                       render={
-                        <a
-                          href={plan.checkoutUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        />
+                        <a href={plan.checkoutUrl} target="_blank" rel="noopener noreferrer" />
                       }
                     >
                       Hacerse socio
@@ -198,7 +187,10 @@ export default async function FansPage() {
         {events.length > 0 ? (
           <div className="mt-6 space-y-4">
             {events.map((event) => (
-              <Card key={event._id} className="flex flex-col gap-0 sm:flex-row sm:items-center sm:justify-between">
+              <Card
+                key={event._id}
+                className="flex flex-col gap-0 sm:flex-row sm:items-center sm:justify-between"
+              >
                 <CardContent className="flex flex-1 flex-col gap-2 sm:flex-row sm:items-center sm:gap-6">
                   <div className="flex items-center gap-2 text-sm text-muted-foreground">
                     <CalendarDays className="h-4 w-4 shrink-0" />
@@ -222,9 +214,7 @@ export default async function FansPage() {
                         {event.capacity} plazas
                       </span>
                     )}
-                    {event.type && (
-                      <Badge variant="secondary">{event.type}</Badge>
-                    )}
+                    {event.type && <Badge variant="secondary">{event.type}</Badge>}
                   </div>
                 </CardContent>
 
@@ -233,11 +223,7 @@ export default async function FansPage() {
                     <Button
                       variant="outline"
                       render={
-                        <a
-                          href={event.registrationUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        />
+                        <a href={event.registrationUrl} target="_blank" rel="noopener noreferrer" />
                       }
                     >
                       Inscribirse
@@ -250,9 +236,7 @@ export default async function FansPage() {
         ) : (
           <div className="mt-6 rounded-card border border-dashed border-border p-12 text-center">
             <CalendarDays className="mx-auto h-8 w-8 text-muted-foreground" />
-            <p className="mt-3 text-muted-foreground">
-              No hay eventos proximos programados.
-            </p>
+            <p className="mt-3 text-muted-foreground">No hay eventos proximos programados.</p>
             <p className="mt-1 text-sm text-muted-foreground">
               Los eventos para fans se cargaran desde Sanity CMS.
             </p>
@@ -268,8 +252,8 @@ export default async function FansPage() {
             Mantente informado
           </h2>
           <p className="mt-2 text-gray-600">
-            Suscribete a nuestra newsletter para recibir noticias, resultados y
-            ofertas exclusivas para socios.
+            Suscribete a nuestra newsletter para recibir noticias, resultados y ofertas exclusivas
+            para socios.
           </p>
           <div className="mt-4">
             <Button

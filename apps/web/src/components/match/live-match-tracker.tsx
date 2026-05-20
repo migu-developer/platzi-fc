@@ -58,9 +58,7 @@ const EVENT_TYPE_LABELS: Record<string, string> = {
 
 function formatEventNotification(event: MatchEvent): string {
   const typeLabel = EVENT_TYPE_LABELS[event.type] ?? event.type
-  const playerName = event.player
-    ? `${event.player.firstName} ${event.player.lastName}`
-    : ''
+  const playerName = event.player ? `${event.player.firstName} ${event.player.lastName}` : ''
   return `${event.minute}' - ${typeLabel}${playerName ? ` - ${playerName}` : ''}`
 }
 
@@ -140,12 +138,7 @@ export function LiveMatchTracker({
   const isLive = status === 'live'
 
   return (
-    <Card
-      className={cn(
-        'mt-6 transition-colors',
-        isLive && 'border-2 border-red-500',
-      )}
-    >
+    <Card className={cn('mt-6 transition-colors', isLive && 'border-2 border-red-500')}>
       <CardContent className="p-4 sm:p-6">
         {/* Notifications */}
         {notifications.length > 0 && (
@@ -212,11 +205,7 @@ export function LiveMatchTracker({
         {/* Stats */}
         {stats.length > 0 && (
           <div className="mt-6">
-            <MatchStats
-              stats={stats}
-              homeTeamName={homeTeamName}
-              awayTeamName={awayTeamName}
-            />
+            <MatchStats stats={stats} homeTeamName={homeTeamName} awayTeamName={awayTeamName} />
           </div>
         )}
       </CardContent>

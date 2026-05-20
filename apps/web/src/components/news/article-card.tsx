@@ -51,11 +51,7 @@ export function ArticleCard({
                 Oficial
               </Badge>
             )}
-            {category && (
-              <Badge variant="secondary">
-                {CATEGORY_LABELS[category] || category}
-              </Badge>
-            )}
+            {category && <Badge variant="secondary">{CATEGORY_LABELS[category] || category}</Badge>}
           </div>
           <h3 className="font-(family-name:--font-heading) text-sm font-bold leading-snug group-hover:text-club-primary">
             {title}

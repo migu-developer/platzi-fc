@@ -124,9 +124,7 @@ export default async function SponsorsPage() {
                             sizes="(max-width: 640px) 50vw, (max-width: 1024px) 25vw, 20vw"
                           />
                         ) : (
-                          <span className="text-sm text-muted-foreground">
-                            {sponsor.name}
-                          </span>
+                          <span className="text-sm text-muted-foreground">{sponsor.name}</span>
                         )}
                       </div>
                       <CardContent className="p-3 text-center">
@@ -141,9 +139,7 @@ export default async function SponsorsPage() {
         </div>
       ) : (
         <div className="mt-12 rounded-card border border-dashed border-border p-12 text-center">
-          <p className="text-muted-foreground">
-            No hay sponsors registrados por el momento.
-          </p>
+          <p className="text-muted-foreground">No hay sponsors registrados por el momento.</p>
           <p className="mt-2 text-sm text-muted-foreground">
             El contenido se cargara desde Sanity CMS una vez configurado el proyecto.
           </p>
@@ -156,8 +152,7 @@ export default async function SponsorsPage() {
           Quieres ser sponsor?
         </h2>
         <p className="mt-2 text-gray-600">
-          Contacta con nuestro departamento comercial para conocer las oportunidades de
-          patrocinio.
+          Contacta con nuestro departamento comercial para conocer las oportunidades de patrocinio.
         </p>
         <div className="mt-4">
           <Button render={<Link href="/club/contacto" />}>Contactar</Button>

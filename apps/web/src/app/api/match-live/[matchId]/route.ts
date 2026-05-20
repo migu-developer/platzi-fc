@@ -22,10 +22,7 @@ export async function GET(
     const match = await client.fetch(LIVE_MATCH_QUERY, { matchId }, { cache: 'no-store' })
 
     if (!match) {
-      return NextResponse.json(
-        { message: 'Partido no encontrado' },
-        { status: 404 },
-      )
+      return NextResponse.json({ message: 'Partido no encontrado' }, { status: 404 })
     }
 
     return NextResponse.json(match, {

@@ -14,7 +14,9 @@ const components: PortableTextComponents = {
       <h3 className="font-(family-name:--font-heading) mt-6 mb-2 text-xl font-bold">{children}</h3>
     ),
     h4: ({ children }) => (
-      <h4 className="font-(family-name:--font-heading) mt-4 mb-2 text-lg font-semibold">{children}</h4>
+      <h4 className="font-(family-name:--font-heading) mt-4 mb-2 text-lg font-semibold">
+        {children}
+      </h4>
     ),
     normal: ({ children }) => <p className="mb-4 leading-relaxed">{children}</p>,
     blockquote: ({ children }) => (

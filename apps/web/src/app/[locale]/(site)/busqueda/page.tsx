@@ -75,19 +75,13 @@ const POSITION_LABELS: Record<string, string> = {
 
 type SearchParams = Promise<{ q?: string; tab?: string }>
 
-export default async function BusquedaPage({
-  searchParams,
-}: {
-  searchParams: SearchParams
-}) {
+export default async function BusquedaPage({ searchParams }: { searchParams: SearchParams }) {
   const { q, tab } = await searchParams
   const query = q?.trim() || ''
 
   let results: SearchResults | null = null
   if (query.length >= 2) {
-    results = await client
-      .fetch<SearchResults>(SEARCH_QUERY, { q: `${query}*` })
-      .catch(() => null)
+    results = await client.fetch<SearchResults>(SEARCH_QUERY, { q: `${query}*` }).catch(() => null)
   }
 
   const counts = results
@@ -211,7 +205,9 @@ export default async function BusquedaPage({
                                   {POSITION_LABELS[player.position] || player.position}
                                 </Badge>
                                 {player.nationality && (
-                                  <span className="text-xs text-muted-foreground">{player.nationality}</span>
+                                  <span className="text-xs text-muted-foreground">
+                                    {player.nationality}
+                                  </span>
                                 )}
                               </div>
                             </div>
@@ -233,7 +229,9 @@ export default async function BusquedaPage({
                           <CardContent className="flex items-center justify-between gap-4 p-4">
                             <div>
                               <p className="font-semibold">
-                                {match.homeTeam.name} {formatMatchScore(match.homeScore, match.awayScore)} {match.awayTeam.name}
+                                {match.homeTeam.name}{' '}
+                                {formatMatchScore(match.homeScore, match.awayScore)}{' '}
+                                {match.awayTeam.name}
                               </p>
                               <p className="mt-0.5 text-xs text-muted-foreground">
                                 {match.competition?.name}

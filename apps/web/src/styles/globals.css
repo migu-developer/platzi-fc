@@ -1,18 +1,18 @@
 @import 'tailwindcss';
-@import "tw-animate-css";
-@import "shadcn/tailwind.css";
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
 
 @custom-variant dark (&:is(.dark *));
 
 @theme {
   /* Platzi FC brand colors */
-  --color-club-primary: #1B4332;
-  --color-club-primary-light: #2D6A4F;
-  --color-club-secondary: #D4AF37;
-  --color-club-secondary-light: #E8C547;
-  --color-club-dark: #0B1D14;
-  --color-club-light: #F5F5F0;
-  --color-club-accent: #95D5B2;
+  --color-club-primary: #1b4332;
+  --color-club-primary-light: #2d6a4f;
+  --color-club-secondary: #d4af37;
+  --color-club-secondary-light: #e8c547;
+  --color-club-dark: #0b1d14;
+  --color-club-light: #f5f5f0;
+  --color-club-accent: #95d5b2;
 
   /* Typography */
   --font-heading: var(--font-heading), system-ui, sans-serif;
@@ -81,14 +81,14 @@
   --accent: oklch(0.78 0.12 85);
   --accent-foreground: oklch(0.18 0.04 155);
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.90 0.01 155);
-  --input: oklch(0.90 0.01 155);
+  --border: oklch(0.9 0.01 155);
+  --input: oklch(0.9 0.01 155);
   --ring: oklch(0.33 0.06 155);
   --chart-1: oklch(0.33 0.06 155);
   --chart-2: oklch(0.78 0.12 85);
   --chart-3: oklch(0.73 0.15 155);
   --chart-4: oklch(0.45 0.08 155);
-  --chart-5: oklch(0.60 0.10 85);
+  --chart-5: oklch(0.6 0.1 85);
   --radius: 0.625rem;
   --sidebar: oklch(0.98 0.002 155);
   --sidebar-foreground: oklch(0.18 0.04 155);
@@ -96,7 +96,7 @@
   --sidebar-primary-foreground: oklch(0.98 0.002 155);
   --sidebar-accent: oklch(0.96 0.005 155);
   --sidebar-accent-foreground: oklch(0.18 0.04 155);
-  --sidebar-border: oklch(0.90 0.01 155);
+  --sidebar-border: oklch(0.9 0.01 155);
   --sidebar-ring: oklch(0.33 0.06 155);
 }
 
@@ -121,7 +121,7 @@
   --ring: oklch(0.73 0.15 155);
   --chart-1: oklch(0.73 0.15 155);
   --chart-2: oklch(0.78 0.12 85);
-  --chart-3: oklch(0.60 0.10 155);
+  --chart-3: oklch(0.6 0.1 155);
   --chart-4: oklch(0.45 0.08 85);
   --chart-5: oklch(0.33 0.06 155);
   --sidebar: oklch(0.18 0.04 155);

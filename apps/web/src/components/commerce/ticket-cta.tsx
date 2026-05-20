@@ -25,7 +25,7 @@ export function TicketCta({ matchLabel, datetime, checkoutUrl }: TicketCtaProps)
           render={<a href={checkoutUrl} target="_blank" rel="noopener noreferrer" />}
           className="bg-club-primary text-white hover:bg-club-primary-light"
         >
-            Comprar
+          Comprar
         </Button>
       </CardContent>
     </Card>

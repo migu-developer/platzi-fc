@@ -11,11 +11,7 @@ type PaginationProps = {
   queryParams?: Record<string, string>
 }
 
-function buildHref(
-  baseHref: string,
-  page: number,
-  queryParams?: Record<string, string>,
-): string {
+function buildHref(baseHref: string, page: number, queryParams?: Record<string, string>): string {
   const params = new URLSearchParams(queryParams)
   if (page > 1) params.set('page', String(page))
   const qs = params.toString()
@@ -37,8 +33,14 @@ export function Pagination({ currentPage, totalPages, baseHref, queryParams }: P
   return (
     <nav aria-label="Paginacion" className="mt-8 flex items-center justify-center gap-1">
       {currentPage > 1 && (
-        <Button variant="ghost" size="icon" render={<Link href={buildHref(baseHref, currentPage - 1, queryParams)} aria-label="Anterior" />}>
-            <ChevronLeft className="h-4 w-4" />
+        <Button
+          variant="ghost"
+          size="icon"
+          render={
+            <Link href={buildHref(baseHref, currentPage - 1, queryParams)} aria-label="Anterior" />
+          }
+        >
+          <ChevronLeft className="h-4 w-4" />
         </Button>
       )}
 
@@ -47,36 +49,37 @@ export function Pagination({ currentPage, totalPages, baseHref, queryParams }: P
           <span key={`e-${i}`} className="px-2 text-muted-foreground">
             ...
           </span>
+        ) : p === currentPage ? (
+          <Button
+            key={p}
+            variant="default"
+            size="icon"
+            className={cn('h-9 w-9', 'bg-club-primary text-white hover:bg-club-primary-light')}
+          >
+            <span aria-current="page">{p}</span>
+          </Button>
         ) : (
-          p === currentPage ? (
-            <Button
-              key={p}
-              variant="default"
-              size="icon"
-              className={cn(
-                'h-9 w-9',
-                'bg-club-primary text-white hover:bg-club-primary-light',
-              )}
-            >
-              <span aria-current="page">{p}</span>
-            </Button>
-          ) : (
-            <Button
-              key={p}
-              variant="ghost"
-              size="icon"
-              className="h-9 w-9"
-              render={<Link href={buildHref(baseHref, p, queryParams)} />}
-            >
-              {p}
-            </Button>
-          )
+          <Button
+            key={p}
+            variant="ghost"
+            size="icon"
+            className="h-9 w-9"
+            render={<Link href={buildHref(baseHref, p, queryParams)} />}
+          >
+            {p}
+          </Button>
         ),
       )}
 
       {currentPage < totalPages && (
-        <Button variant="ghost" size="icon" render={<Link href={buildHref(baseHref, currentPage + 1, queryParams)} aria-label="Siguiente" />}>
-            <ChevronRight className="h-4 w-4" />
+        <Button
+          variant="ghost"
+          size="icon"
+          render={
+            <Link href={buildHref(baseHref, currentPage + 1, queryParams)} aria-label="Siguiente" />
+          }
+        >
+          <ChevronRight className="h-4 w-4" />
         </Button>
       )}
     </nav>

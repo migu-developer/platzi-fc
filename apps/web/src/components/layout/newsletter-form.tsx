@@ -38,11 +38,7 @@ export function NewsletterForm() {
           disabled={isPending}
           className="bg-club-secondary text-club-dark hover:bg-club-secondary-light"
         >
-          {isPending ? (
-            <Loader2 className="h-4 w-4 animate-spin" />
-          ) : (
-            'Suscribir'
-          )}
+          {isPending ? <Loader2 className="h-4 w-4 animate-spin" /> : 'Suscribir'}
         </Button>
       </form>
       {state && !state.success && (
