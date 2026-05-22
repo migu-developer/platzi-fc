@@ -95,8 +95,7 @@ export const match = defineType({
       date: 'datetime',
     },
     prepare({ home, away, homeScore, awayScore, date }) {
-      const score =
-        homeScore != null && awayScore != null ? `${homeScore} - ${awayScore}` : 'vs'
+      const score = homeScore != null && awayScore != null ? `${homeScore} - ${awayScore}` : 'vs'
       const d = date ? new Date(date).toLocaleDateString('es') : ''
       return { title: `${home || '?'} ${score} ${away || '?'}`, subtitle: d }
     },

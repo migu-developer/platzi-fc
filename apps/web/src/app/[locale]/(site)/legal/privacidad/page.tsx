@@ -9,10 +9,7 @@ export default function PrivacidadPage() {
   return (
     <CmsPage
       section="legal-privacidad"
-      breadcrumbs={[
-        { label: 'Legal' },
-        { label: 'Politica de Privacidad' },
-      ]}
+      breadcrumbs={[{ label: 'Legal' }, { label: 'Politica de Privacidad' }]}
       fallbackTitle="Politica de Privacidad"
       fallbackDescription="Como Platzi FC recopila, utiliza y protege tu informacion personal."
     />

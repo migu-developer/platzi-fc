@@ -1,10 +1,7 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { client } from '@/lib/sanity/client'
-import {
-  COMPETITION_BY_SLUG_QUERY,
-  MATCHES_BY_COMPETITION_QUERY,
-} from '@/lib/sanity/queries'
+import { COMPETITION_BY_SLUG_QUERY, MATCHES_BY_COMPETITION_QUERY } from '@/lib/sanity/queries'
 import { MatchCard } from '@/components/match/match-card'
 import { StandingsTable } from '@/components/match/standings-table'
 import { Breadcrumbs } from '@/components/shared/breadcrumbs'
@@ -54,7 +51,11 @@ type StandingsData = {
 
 async function getCompetition(slug: string) {
   return client
-    .fetch<CompetitionData | null>(COMPETITION_BY_SLUG_QUERY, { slug }, { next: { tags: ['competition'] } })
+    .fetch<CompetitionData | null>(
+      COMPETITION_BY_SLUG_QUERY,
+      { slug },
+      { next: { tags: ['competition'] } },
+    )
     .catch(() => null)
 }
 
@@ -91,7 +92,9 @@ export default async function CompeticionDetailPage({ params }: Props) {
 
   const [matches, standings] = await Promise.all([
     client
-      .fetch<MatchItem[]>(MATCHES_BY_COMPETITION_QUERY, { competitionSlug: slug }, { next: { tags: ['match'] } })
+      .fetch<
+        MatchItem[]
+      >(MATCHES_BY_COMPETITION_QUERY, { competitionSlug: slug }, { next: { tags: ['match'] } })
       .catch(() => []),
     getStandingsForCompetition(competition._id),
   ])
@@ -102,10 +105,7 @@ export default async function CompeticionDetailPage({ params }: Props) {
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
       <Breadcrumbs
-        items={[
-          { label: 'Partidos', href: '/partidos' },
-          { label: competition.name },
-        ]}
+        items={[{ label: 'Partidos', href: '/partidos' }, { label: competition.name }]}
       />
 
       <SectionHeader

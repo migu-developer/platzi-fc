@@ -9,10 +9,7 @@ export default function AccesibilidadPage() {
   return (
     <CmsPage
       section="legal-accesibilidad"
-      breadcrumbs={[
-        { label: 'Legal' },
-        { label: 'Accesibilidad' },
-      ]}
+      breadcrumbs={[{ label: 'Legal' }, { label: 'Accesibilidad' }]}
       fallbackTitle="Declaracion de Accesibilidad"
       fallbackDescription="Nuestro compromiso con la accesibilidad web y las medidas que implementamos."
     />

@@ -42,11 +42,7 @@ type ArticleData = {
 
 async function getArticle(slug: string): Promise<ArticleData | null> {
   return client
-    .fetch<ArticleData>(
-      ARTICLE_BY_SLUG_QUERY,
-      { slug },
-      { next: { tags: ['article'] } },
-    )
+    .fetch<ArticleData>(ARTICLE_BY_SLUG_QUERY, { slug }, { next: { tags: ['article'] } })
     .catch(() => null)
 }
 
@@ -97,12 +93,7 @@ export default async function NoticiaDetailPage({ params }: Props) {
       />
 
       <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-        <Breadcrumbs
-          items={[
-            { label: 'Noticias', href: '/noticias' },
-            { label: article.title },
-          ]}
-        />
+        <Breadcrumbs items={[{ label: 'Noticias', href: '/noticias' }, { label: article.title }]} />
 
         <article className="mx-auto max-w-3xl">
           {/* Header */}

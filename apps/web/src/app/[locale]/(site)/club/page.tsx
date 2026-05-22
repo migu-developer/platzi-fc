@@ -1,14 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import {
-  Landmark,
-  MapPin,
-  Heart,
-  Mail,
-  FileText,
-  Users,
-  type LucideIcon,
-} from 'lucide-react'
+import { Landmark, MapPin, Heart, Mail, FileText, Users, type LucideIcon } from 'lucide-react'
 import { Card, CardContent } from '@/components/ui/card'
 import { Breadcrumbs } from '@/components/shared/breadcrumbs'
 import { SectionHeader } from '@/components/shared/section-header'

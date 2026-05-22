@@ -71,23 +71,17 @@ const NAV_ITEMS: NavItem[] = [
   },
 ]
 
-function MegaMenuLink({
-  href,
-  label,
-  desc,
-}: {
-  href: string
-  label: string
-  desc?: string
-}) {
+function MegaMenuLink({ href, label, desc }: { href: string; label: string; desc?: string }) {
   return (
     <li>
       <NavigationMenuLink
         render={<Link href={href} />}
         className="block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
       >
-          <div className="text-sm font-medium leading-none">{label}</div>
-          {desc && <p className="mt-1 line-clamp-2 text-xs leading-snug text-muted-foreground">{desc}</p>}
+        <div className="text-sm font-medium leading-none">{label}</div>
+        {desc && (
+          <p className="mt-1 line-clamp-2 text-xs leading-snug text-muted-foreground">{desc}</p>
+        )}
       </NavigationMenuLink>
     </li>
   )
@@ -100,9 +94,7 @@ function DesktopNav() {
         {NAV_ITEMS.map((item) =>
           item.children ? (
             <NavigationMenuItem key={item.href}>
-              <NavigationMenuTrigger className="text-sm">
-                {item.label}
-              </NavigationMenuTrigger>
+              <NavigationMenuTrigger className="text-sm">{item.label}</NavigationMenuTrigger>
               <NavigationMenuContent>
                 <ul className="grid w-[320px] gap-1 p-3">
                   {item.children.map((child) => (
@@ -118,8 +110,11 @@ function DesktopNav() {
             </NavigationMenuItem>
           ) : (
             <NavigationMenuItem key={item.href}>
-              <NavigationMenuLink render={<Link href={item.href} />} className={navigationMenuTriggerStyle()}>
-                  {item.label}
+              <NavigationMenuLink
+                render={<Link href={item.href} />}
+                className={navigationMenuTriggerStyle()}
+              >
+                {item.label}
               </NavigationMenuLink>
             </NavigationMenuItem>
           ),
@@ -144,7 +139,7 @@ function MobileNav() {
           <Button variant="ghost" size="icon" className="lg:hidden" aria-label="Abrir menu" />
         }
       >
-          <Menu className="h-5 w-5" />
+        <Menu className="h-5 w-5" />
       </SheetTrigger>
       <SheetContent side="left" className="w-80 overflow-y-auto">
         <SheetHeader>
@@ -243,11 +238,19 @@ export function Header() {
         {/* Utilities */}
         <div className="flex items-center gap-2">
           <LanguageSwitcher />
-          <Button variant="ghost" size="icon" render={<Link href="/login" aria-label="Mi cuenta" />}>
-              <User className="h-4 w-4" />
+          <Button
+            variant="ghost"
+            size="icon"
+            render={<Link href="/login" aria-label="Mi cuenta" />}
+          >
+            <User className="h-4 w-4" />
           </Button>
-          <Button variant="ghost" size="icon" render={<Link href="/busqueda" aria-label="Buscar" />}>
-              <Search className="h-4 w-4" />
+          <Button
+            variant="ghost"
+            size="icon"
+            render={<Link href="/busqueda" aria-label="Buscar" />}
+          >
+            <Search className="h-4 w-4" />
           </Button>
           <CartButton />
           <Button

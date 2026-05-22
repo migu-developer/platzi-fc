@@ -32,15 +32,8 @@ function StatBar({ stat }: { stat: StatItem }) {
         >
           {stat.home}
         </span>
-        <span className="flex-1 text-center text-xs text-muted-foreground">
-          {stat.label}
-        </span>
-        <span
-          className={cn(
-            'w-10 text-right tabular-nums',
-            awayIsHigher && 'font-bold',
-          )}
-        >
+        <span className="flex-1 text-center text-xs text-muted-foreground">{stat.label}</span>
+        <span className={cn('w-10 text-right tabular-nums', awayIsHigher && 'font-bold')}>
           {stat.away}
         </span>
       </div>

@@ -9,10 +9,7 @@ export default function EstadioPage() {
   return (
     <CmsPage
       section="club-estadio"
-      breadcrumbs={[
-        { label: 'Club', href: '/club' },
-        { label: 'Estadio' },
-      ]}
+      breadcrumbs={[{ label: 'Club', href: '/club' }, { label: 'Estadio' }]}
       fallbackTitle="Nuestro Estadio"
       fallbackDescription="Informacion sobre el estadio, como llegar, mapa de accesos y accesibilidad."
     />

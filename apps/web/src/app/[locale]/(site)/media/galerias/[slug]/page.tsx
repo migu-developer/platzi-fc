@@ -47,11 +47,7 @@ export default async function GaleriaDetailPage({ params }: Props) {
   const { slug } = await params
 
   const gallery = await client
-    .fetch<Gallery | null>(
-      GALLERY_BY_SLUG_QUERY,
-      { slug },
-      { next: { tags: ['gallery'] } },
-    )
+    .fetch<Gallery | null>(GALLERY_BY_SLUG_QUERY, { slug }, { next: { tags: ['gallery'] } })
     .catch(() => null)
 
   if (!gallery) {
@@ -62,28 +58,18 @@ export default async function GaleriaDetailPage({ params }: Props) {
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-      <Breadcrumbs
-        items={[
-          { label: 'Media', href: '/media' },
-          { label: gallery.title },
-        ]}
-      />
+      <Breadcrumbs items={[{ label: 'Media', href: '/media' }, { label: gallery.title }]} />
 
       <SectionHeader title={gallery.title} />
 
       {gallery.date && (
-        <p className="mt-2 text-sm text-muted-foreground">
-          {formatDate(gallery.date)}
-        </p>
+        <p className="mt-2 text-sm text-muted-foreground">{formatDate(gallery.date)}</p>
       )}
 
       {items.length > 0 ? (
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {items.map((item, i) => (
-            <div
-              key={i}
-              className="relative aspect-square overflow-hidden rounded-card"
-            >
+            <div key={i} className="relative aspect-square overflow-hidden rounded-card">
               {item.asset?.url ? (
                 <Image
                   src={item.asset.url}
@@ -102,9 +88,7 @@ export default async function GaleriaDetailPage({ params }: Props) {
         </div>
       ) : (
         <div className="mt-12 rounded-card border border-dashed border-border p-12 text-center">
-          <p className="text-muted-foreground">
-            Esta galeria no tiene fotos por el momento.
-          </p>
+          <p className="text-muted-foreground">Esta galeria no tiene fotos por el momento.</p>
         </div>
       )}
     </div>

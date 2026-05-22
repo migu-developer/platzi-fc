@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs'
 import { Badge } from '@/components/ui/badge'
@@ -65,10 +65,7 @@ function PlayerRow({ player }: { player: LineupPlayer }) {
       )}
       <span className="flex-1 truncate text-sm">{name}</span>
       {player.position && (
-        <Badge
-          variant="secondary"
-          className={cn('text-[10px]', POSITION_COLORS[player.position])}
-        >
+        <Badge variant="secondary" className={cn('text-[10px]', POSITION_COLORS[player.position])}>
           {POSITION_LABELS[player.position] ?? player.position}
         </Badge>
       )}
@@ -79,9 +76,7 @@ function PlayerRow({ player }: { player: LineupPlayer }) {
 function LineupSection({ lineup }: { lineup: LineupPlayer[] }) {
   if (!lineup || lineup.length === 0) {
     return (
-      <p className="py-4 text-center text-sm text-muted-foreground">
-        Alineacion no disponible.
-      </p>
+      <p className="py-4 text-center text-sm text-muted-foreground">Alineacion no disponible.</p>
     )
   }
 
@@ -97,16 +92,9 @@ function LineupSection({ lineup }: { lineup: LineupPlayer[] }) {
         </h4>
         <div className="divide-y">
           {starters.length > 0 ? (
-            starters.map((p, i) => (
-              <PlayerRow
-                key={`starter-${p.number ?? i}`}
-                player={p}
-              />
-            ))
+            starters.map((p, i) => <PlayerRow key={`starter-${p.number ?? i}`} player={p} />)
           ) : (
-            <p className="py-2 text-sm text-muted-foreground">
-              Sin titulares registrados.
-            </p>
+            <p className="py-2 text-sm text-muted-foreground">Sin titulares registrados.</p>
           )}
         </div>
       </div>
@@ -119,10 +107,7 @@ function LineupSection({ lineup }: { lineup: LineupPlayer[] }) {
           </h4>
           <div className="divide-y">
             {substitutes.map((p, i) => (
-              <PlayerRow
-                key={`sub-${p.number ?? i}`}
-                player={p}
-              />
+              <PlayerRow key={`sub-${p.number ?? i}`} player={p} />
             ))}
           </div>
         </div>
@@ -142,9 +127,7 @@ export function LineupDisplay({
 
   if (!hasHome && !hasAway) {
     return (
-      <p className="py-6 text-center text-sm text-muted-foreground">
-        Alineaciones no disponibles.
-      </p>
+      <p className="py-6 text-center text-sm text-muted-foreground">Alineaciones no disponibles.</p>
     )
   }
 
@@ -154,17 +137,13 @@ export function LineupDisplay({
         <TabsTrigger value="home">
           Local
           {homeTeamName && (
-            <span className="ml-1 hidden text-muted-foreground sm:inline">
-              ({homeTeamName})
-            </span>
+            <span className="ml-1 hidden text-muted-foreground sm:inline">({homeTeamName})</span>
           )}
         </TabsTrigger>
         <TabsTrigger value="away">
           Visitante
           {awayTeamName && (
-            <span className="ml-1 hidden text-muted-foreground sm:inline">
-              ({awayTeamName})
-            </span>
+            <span className="ml-1 hidden text-muted-foreground sm:inline">({awayTeamName})</span>
           )}
         </TabsTrigger>
       </TabsList>

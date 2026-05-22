@@ -1,0 +1,71 @@
+packages:
+  - "apps/*"
+  - "packages/*"
+
+# --- Security & supply-chain hardening ---
+
+# Force only the declared packageManager (pnpm) — blocks npm/yarn usage
+packageManagerStrict: true
+packageManagerStrictVersion: true
+
+# Enforce engines field (Node >=20, pnpm >=10)
+engineStrict: true
+
+# Quarantine new package versions for 7 days (mitigates compromised-package
+# attacks like the shai-hulud incident). Requires pnpm >=10.16.
+minimumReleaseAge: 10080
+
+# Packages allowed to bypass the quarantine.
+# Reserve this list for trusted publishers when applying CVE patches.
+minimumReleaseAgeExclude:
+  # CVE-2026-45773 — fixed in turbo 2.9.14 (Vercel-published)
+  - turbo
+  - "@turbo/*"
+
+# CI safety: fail if lockfile would change
+preferFrozenLockfile: true
+
+# Verify integrity of every package against the store on install
+verifyStoreIntegrity: true
+verifyDepsBeforeRun: warn
+
+# Audit settings — fail on moderate+ severity
+auditLevel: moderate
+
+# --- Dependency resolution ---
+
+# Auto-install peer deps but surface real conflicts
+autoInstallPeers: true
+strictPeerDependencies: false
+
+# Use isolated node_modules (default) — prevents phantom deps
+nodeLinker: isolated
+
+# Resolve workspace packages from the workspace, not the registry
+linkWorkspacePackages: true
+preferWorkspacePackages: true
+
+# --- Install scripts ---
+# pnpm blocks postinstall scripts by default (supply-chain hardening).
+# Each entry below is a native-binding package whose postinstall must run
+# for the dependency to work. Audit any new entry before adding it here.
+allowBuilds:
+  "@parcel/watcher": true
+  "@swc/core": true
+  "@tailwindcss/oxide": true
+  esbuild: true
+  msw: true
+  sharp: true
+  unrs-resolver: true
+
+# --- Security overrides for transitive deps ---
+# Each pin is justified by a CVE / GHSA advisory below.
+overrides:
+  # CVE-2026-41305 — XSS via unescaped </style> in postcss <8.5.10 (transitive via next)
+  postcss: ">=8.5.10"
+  # CVE-2025-64756 — glob CLI command injection in >=10.2.0 <10.5.0 (transitive via sanity)
+  glob: ">=10.5.0"
+  # CVE-2024-53382 — PrismJS DOM clobbering / XSS in <1.30.0 (transitive via @sanity/vision)
+  prismjs: ">=1.30.0"
+  # GHSA-mh29-5h37-fv8m — js-yaml prototype pollution in <3.14.2 (transitive via sanity)
+  js-yaml: "^3.14.2"

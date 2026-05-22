@@ -9,10 +9,7 @@ export default function HistoriaPage() {
   return (
     <CmsPage
       section="club-historia"
-      breadcrumbs={[
-        { label: 'Club', href: '/club' },
-        { label: 'Historia' },
-      ]}
+      breadcrumbs={[{ label: 'Club', href: '/club' }, { label: 'Historia' }]}
       fallbackTitle="Historia del Club"
       fallbackDescription="Conoce la trayectoria y los hitos mas importantes de Platzi FC desde su fundacion."
     />

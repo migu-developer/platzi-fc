@@ -72,10 +72,7 @@ export async function MatchMedia({ matchId }: MatchMediaProps) {
           <SectionHeader title="Galerias" className="mb-4" />
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {galleries.map((gallery) => (
-              <Link
-                key={gallery._id}
-                href={`/media/galerias/${gallery.slug.current}`}
-              >
+              <Link key={gallery._id} href={`/media/galerias/${gallery.slug.current}`}>
                 <Card className="group transition-shadow hover:shadow-md">
                   <div className="flex aspect-video items-center justify-center bg-muted">
                     <ImageIcon className="h-10 w-10 text-muted-foreground/40" />

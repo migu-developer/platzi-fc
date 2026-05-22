@@ -48,7 +48,12 @@ export const player = defineType({
       initialValue: 'active',
     },
     { name: 'team', title: 'Equipo', type: 'reference', to: [{ type: 'team' }] },
-    { name: 'clubHistory', title: 'Historial de Clubes', type: 'array', of: [{ type: 'clubHistory' }] },
+    {
+      name: 'clubHistory',
+      title: 'Historial de Clubes',
+      type: 'array',
+      of: [{ type: 'clubHistory' }],
+    },
     {
       name: 'statsBySeason',
       title: 'Estadisticas por Temporada',

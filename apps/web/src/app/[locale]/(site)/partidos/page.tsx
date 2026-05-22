@@ -10,8 +10,7 @@ import { JsonLd, organizationJsonLd } from '@/components/shared/json-ld'
 
 export const metadata: Metadata = {
   title: 'Calendario y Resultados',
-  description:
-    'Consulta el calendario de partidos, resultados y proximos encuentros de Platzi FC.',
+  description: 'Consulta el calendario de partidos, resultados y proximos encuentros de Platzi FC.',
 }
 
 type MatchItem = {
@@ -32,17 +31,15 @@ type SelectorItem = { _id: string; name: string; slug: { current: string } }
 
 type SearchParams = Promise<{ season?: string; competition?: string }>
 
-export default async function PartidosPage({
-  searchParams,
-}: {
-  searchParams: SearchParams
-}) {
+export default async function PartidosPage({ searchParams }: { searchParams: SearchParams }) {
   const { season: seasonFilter, competition: competitionFilter } = await searchParams
 
   const [matches, seasons, competitions] = await Promise.all([
     client.fetch<MatchItem[]>(MATCHES_QUERY, {}, { next: { tags: ['match'] } }).catch(() => []),
     client.fetch<SelectorItem[]>(SEASONS_QUERY, {}, { next: { tags: ['season'] } }).catch(() => []),
-    client.fetch<SelectorItem[]>(COMPETITIONS_QUERY, {}, { next: { tags: ['competition'] } }).catch(() => []),
+    client
+      .fetch<SelectorItem[]>(COMPETITIONS_QUERY, {}, { next: { tags: ['competition'] } })
+      .catch(() => []),
   ])
 
   // Filter by season/competition
@@ -122,12 +119,8 @@ export default async function PartidosPage({
 
         <Tabs defaultValue="upcoming" className="mt-8">
           <TabsList>
-            <TabsTrigger value="upcoming">
-              Proximos ({upcoming.length})
-            </TabsTrigger>
-            <TabsTrigger value="results">
-              Resultados ({results.length})
-            </TabsTrigger>
+            <TabsTrigger value="upcoming">Proximos ({upcoming.length})</TabsTrigger>
+            <TabsTrigger value="results">Resultados ({results.length})</TabsTrigger>
           </TabsList>
 
           <TabsContent value="upcoming">

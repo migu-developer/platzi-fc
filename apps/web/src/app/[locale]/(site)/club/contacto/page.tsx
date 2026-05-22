@@ -9,10 +9,7 @@ export default function ContactoPage() {
   return (
     <CmsPage
       section="club-contacto"
-      breadcrumbs={[
-        { label: 'Club', href: '/club' },
-        { label: 'Contacto' },
-      ]}
+      breadcrumbs={[{ label: 'Club', href: '/club' }, { label: 'Contacto' }]}
       fallbackTitle="Contacto"
       fallbackDescription="Ponte en contacto con Platzi FC. Prensa, sponsors, consultas generales."
     />

@@ -19,7 +19,12 @@ export const gallery = defineType({
       type: 'array',
       of: [{ type: 'image', options: { hotspot: true } }],
     },
-    { name: 'relatedMatch', title: 'Partido Relacionado', type: 'reference', to: [{ type: 'match' }] },
+    {
+      name: 'relatedMatch',
+      title: 'Partido Relacionado',
+      type: 'reference',
+      to: [{ type: 'match' }],
+    },
     { name: 'date', title: 'Fecha', type: 'datetime' },
   ],
   preview: {

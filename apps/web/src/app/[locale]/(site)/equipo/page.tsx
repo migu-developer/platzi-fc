@@ -47,11 +47,7 @@ const POSITION_LABELS: Record<string, string> = {
 
 type SearchParams = Promise<{ position?: string }>
 
-export default async function EquipoPage({
-  searchParams,
-}: {
-  searchParams: SearchParams
-}) {
+export default async function EquipoPage({ searchParams }: { searchParams: SearchParams }) {
   const { position } = await searchParams
 
   const [players, staffList] = await Promise.all([
@@ -59,9 +55,7 @@ export default async function EquipoPage({
     client.fetch<StaffItem[]>(STAFF_QUERY, {}, { next: { tags: ['staff'] } }).catch(() => []),
   ])
 
-  const filteredPlayers = position
-    ? players.filter((p) => p.position === position)
-    : players
+  const filteredPlayers = position ? players.filter((p) => p.position === position) : players
 
   const grouped = POSITION_ORDER.map((pos) => ({
     position: pos,
@@ -76,7 +70,9 @@ export default async function EquipoPage({
 
   return (
     <>
-      <JsonLd data={sportsTeamJsonLd({ name: 'Platzi FC', url: `${SITE_URL}/equipo`, sport: 'Football' })} />
+      <JsonLd
+        data={sportsTeamJsonLd({ name: 'Platzi FC', url: `${SITE_URL}/equipo`, sport: 'Football' })}
+      />
       <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
         <Breadcrumbs items={[{ label: 'Equipo' }]} />
 
@@ -92,7 +88,11 @@ export default async function EquipoPage({
           </TabsList>
 
           <TabsContent value="players" className="mt-6">
-            <FilterBar paramName="position" options={positionOptions} allLabel="Todas las posiciones" />
+            <FilterBar
+              paramName="position"
+              options={positionOptions}
+              allLabel="Todas las posiciones"
+            />
 
             {grouped.length > 0 ? (
               <div className="mt-6 space-y-10">
@@ -113,7 +113,10 @@ export default async function EquipoPage({
                           nationality={player.nationality}
                           photo={
                             player.photo?.asset?.url
-                              ? { url: player.photo.asset.url, alt: `${player.firstName} ${player.lastName}` }
+                              ? {
+                                  url: player.photo.asset.url,
+                                  alt: `${player.firstName} ${player.lastName}`,
+                                }
                               : undefined
                           }
                         />

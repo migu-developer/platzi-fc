@@ -49,7 +49,11 @@ const POSITION_LABELS: Record<string, string> = {
   forward: 'Delantero',
 }
 
-const FOOT_LABELS: Record<string, string> = { left: 'Izquierdo', right: 'Derecho', both: 'Ambidiestro' }
+const FOOT_LABELS: Record<string, string> = {
+  left: 'Izquierdo',
+  right: 'Derecho',
+  both: 'Ambidiestro',
+}
 
 async function getPlayer(slug: string) {
   return client
@@ -89,7 +93,9 @@ export default async function JugadorDetailPage({ params }: Props) {
     { label: 'Posicion', value: POSITION_LABELS[player.position] || player.position },
     player.number != null ? { label: 'Dorsal', value: `#${player.number}` } : null,
     player.nationality ? { label: 'Nacionalidad', value: player.nationality } : null,
-    player.dateOfBirth ? { label: 'Edad', value: `${calculateAge(player.dateOfBirth)} anos` } : null,
+    player.dateOfBirth
+      ? { label: 'Edad', value: `${calculateAge(player.dateOfBirth)} anos` }
+      : null,
     player.height ? { label: 'Altura', value: `${player.height} cm` } : null,
     player.weight ? { label: 'Peso', value: `${player.weight} kg` } : null,
     player.foot ? { label: 'Pie Habil', value: FOOT_LABELS[player.foot] || player.foot } : null,
@@ -108,12 +114,7 @@ export default async function JugadorDetailPage({ params }: Props) {
       />
 
       <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-        <Breadcrumbs
-          items={[
-            { label: 'Equipo', href: '/equipo' },
-            { label: fullName },
-          ]}
-        />
+        <Breadcrumbs items={[{ label: 'Equipo', href: '/equipo' }, { label: fullName }]} />
 
         <div className="grid gap-8 lg:grid-cols-3">
           {/* Photo */}
@@ -148,7 +149,9 @@ export default async function JugadorDetailPage({ params }: Props) {
               )}
               <div>
                 <h1 className="font-(family-name:--font-heading) text-3xl font-bold">{fullName}</h1>
-                <Badge className="mt-1">{POSITION_LABELS[player.position] || player.position}</Badge>
+                <Badge className="mt-1">
+                  {POSITION_LABELS[player.position] || player.position}
+                </Badge>
               </div>
             </div>
 
@@ -175,7 +178,9 @@ export default async function JugadorDetailPage({ params }: Props) {
             {/* Season stats table */}
             {player.statsBySeason && player.statsBySeason.length > 0 && (
               <section className="mt-8">
-                <h2 className="font-(family-name:--font-heading) text-lg font-bold">Estadisticas</h2>
+                <h2 className="font-(family-name:--font-heading) text-lg font-bold">
+                  Estadisticas
+                </h2>
                 <Card className="mt-3">
                   <CardContent className="p-0">
                     <div className="overflow-x-auto">
@@ -217,7 +222,10 @@ export default async function JugadorDetailPage({ params }: Props) {
                 <h2 className="font-(family-name:--font-heading) text-lg font-bold">Trayectoria</h2>
                 <div className="mt-3 space-y-2">
                   {player.clubHistory.map((club, i) => (
-                    <div key={i} className="flex items-center justify-between rounded-md border border-border px-3 py-2 text-sm">
+                    <div
+                      key={i}
+                      className="flex items-center justify-between rounded-md border border-border px-3 py-2 text-sm"
+                    >
                       <span className="font-medium">{club.clubName}</span>
                       <span className="text-muted-foreground">
                         {club.from || '?'} — {club.to || 'Presente'}
@@ -231,7 +239,9 @@ export default async function JugadorDetailPage({ params }: Props) {
             {/* Social links */}
             {player.socialLinks && player.socialLinks.length > 0 && (
               <section className="mt-8">
-                <h2 className="font-(family-name:--font-heading) text-lg font-bold">Redes Sociales</h2>
+                <h2 className="font-(family-name:--font-heading) text-lg font-bold">
+                  Redes Sociales
+                </h2>
                 <div className="mt-3 flex gap-3">
                   {player.socialLinks.map((link, i) => (
                     <a

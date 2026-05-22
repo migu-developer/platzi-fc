@@ -71,9 +71,7 @@ export function PlayerCard({
             <Badge variant="secondary" className={POSITION_COLORS[position]}>
               {POSITION_LABELS[position] || position}
             </Badge>
-            {nationality && (
-              <span className="text-xs text-muted-foreground">{nationality}</span>
-            )}
+            {nationality && <span className="text-xs text-muted-foreground">{nationality}</span>}
           </div>
         </CardContent>
       </Card>

@@ -15,8 +15,7 @@ import { type NextRequest, NextResponse } from 'next/server'
 export async function POST(request: NextRequest) {
   try {
     const secret =
-      request.nextUrl.searchParams.get('secret') ??
-      request.headers.get('x-sanity-secret')
+      request.nextUrl.searchParams.get('secret') ?? request.headers.get('x-sanity-secret')
 
     if (secret !== process.env.SANITY_REVALIDATE_SECRET) {
       return NextResponse.json({ message: 'Token invalido' }, { status: 401 })
@@ -26,18 +25,15 @@ export async function POST(request: NextRequest) {
     const { _type, slug } = body as { _type?: string; slug?: string }
 
     if (!_type) {
-      return NextResponse.json(
-        { message: 'Falta el campo _type en el body' },
-        { status: 400 },
-      )
+      return NextResponse.json({ message: 'Falta el campo _type en el body' }, { status: 400 })
     }
 
     // Revalidate the document type tag (e.g. "match", "player", "article")
-    revalidateTag(_type)
+    revalidateTag(_type, 'max')
 
     // If a slug is provided, also revalidate the specific document
     if (slug) {
-      revalidateTag(`${_type}:${slug}`)
+      revalidateTag(`${_type}:${slug}`, 'max')
     }
 
     return NextResponse.json({

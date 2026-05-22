@@ -43,9 +43,7 @@ export default function LoginPage() {
             <CardTitle className="font-(family-name:--font-heading) text-lg font-bold">
               Bienvenido de vuelta
             </CardTitle>
-            <CardDescription>
-              Ingresa tu email para acceder a tu cuenta
-            </CardDescription>
+            <CardDescription>Ingresa tu email para acceder a tu cuenta</CardDescription>
           </CardHeader>
           <CardContent>
             <form action={loginAction} className="space-y-4">

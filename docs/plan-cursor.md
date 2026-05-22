@@ -21,13 +21,13 @@ Este plan traduce [platzi-fc-requerimiento.md](../platzi-fc-requerimiento.md) en
 
 El requisito no impone stack. Para desarrollo ágil con buen encaje SEO, i18n y despliegue:
 
-| Capa | Recomendación | Motivo breve |
-|------|---------------|--------------|
-| Framework | Next.js (App Router) | Rutas por segmento, metadata SEO, ISR/revalidate para datos que cambian |
-| CMS | Headless (p. ej. Sanity, Contentful, Payload) o MDX + datos JSON en repo para demo | `body_bloques`, `biografia_bloques`, comunicados con adjuntos |
-| Datos deportivos MVP | JSON seed + capa `getMatches` / `getStandings` abstracta | Permite sustituir por API real sin reescribir UI |
-| Búsqueda MVP | `searchParams` + filtrado en servidor o índice ligero | V1 puede evolucionar a Algolia/Typesense |
-| Auth fans (V1+) | Proveedor (Auth.js + OAuth o similar) solo cuando exista módulo membresía con login |
+| Capa                 | Recomendación                                                                       | Motivo breve                                                            |
+| -------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| Framework            | Next.js (App Router)                                                                | Rutas por segmento, metadata SEO, ISR/revalidate para datos que cambian |
+| CMS                  | Headless (p. ej. Sanity, Contentful, Payload) o MDX + datos JSON en repo para demo  | `body_bloques`, `biografia_bloques`, comunicados con adjuntos           |
+| Datos deportivos MVP | JSON seed + capa `getMatches` / `getStandings` abstracta                            | Permite sustituir por API real sin reescribir UI                        |
+| Búsqueda MVP         | `searchParams` + filtrado en servidor o índice ligero                               | V1 puede evolucionar a Algolia/Typesense                                |
+| Auth fans (V1+)      | Proveedor (Auth.js + OAuth o similar) solo cuando exista módulo membresía con login |
 
 Documentar la decisión final en el README del repo cuando se cree el proyecto.
 
@@ -55,20 +55,20 @@ Convención: **un route segment por “tipo de página”** del requisito (lista
 
 Implementar rutas de forma que el árbol del requisito sea navegable aunque algunas páginas sean stub o datos mock.
 
-| Área | Rutas MVP mínimas |
-|------|-------------------|
-| Inicio | `/` |
-| Partidos | `/partidos`, `/partidos/calendario`, `/partidos/resultados`, `/partidos/[slug]` |
-| Competición | `/competicion/[slug]` (tabla + enlaces a calendario del club filtrado) |
-| Equipo | `/equipo/primer-equipo`, `/equipo/primer-equipo/plantilla`, `/equipo/primer-equipo/cuerpo-tecnico`, `/equipo/jugador/[slug]` |
-| Noticias | `/noticias`, `/noticias/[categoria]`, `/noticias/[slug]` |
-| Media | `/media/videos`, `/media/videos/[slug]`, `/media/galerias`, `/media/galerias/[slug]` |
-| Entradas | `/entradas` + CTA desde partido |
-| Tienda | `/tienda`, `/tienda/c/[slug]`, `/tienda/p/[slug]` |
-| Club | `/club/*` (historia, estadio, contacto, etc. como `[...slug]` o segmentos fijos) |
-| Fans / Sponsors / Academy | Landing por sección en MVP; profundidad en V1 |
-| Legal | `/legal/terminos`, `/legal/privacidad`, `/legal/cookies`, `/legal/accesibilidad` |
-| Utilidades | `/buscar`, `not-found`, `error` |
+| Área                      | Rutas MVP mínimas                                                                                                            |
+| ------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| Inicio                    | `/`                                                                                                                          |
+| Partidos                  | `/partidos`, `/partidos/calendario`, `/partidos/resultados`, `/partidos/[slug]`                                              |
+| Competición               | `/competicion/[slug]` (tabla + enlaces a calendario del club filtrado)                                                       |
+| Equipo                    | `/equipo/primer-equipo`, `/equipo/primer-equipo/plantilla`, `/equipo/primer-equipo/cuerpo-tecnico`, `/equipo/jugador/[slug]` |
+| Noticias                  | `/noticias`, `/noticias/[categoria]`, `/noticias/[slug]`                                                                     |
+| Media                     | `/media/videos`, `/media/videos/[slug]`, `/media/galerias`, `/media/galerias/[slug]`                                         |
+| Entradas                  | `/entradas` + CTA desde partido                                                                                              |
+| Tienda                    | `/tienda`, `/tienda/c/[slug]`, `/tienda/p/[slug]`                                                                            |
+| Club                      | `/club/*` (historia, estadio, contacto, etc. como `[...slug]` o segmentos fijos)                                             |
+| Fans / Sponsors / Academy | Landing por sección en MVP; profundidad en V1                                                                                |
+| Legal                     | `/legal/terminos`, `/legal/privacidad`, `/legal/cookies`, `/legal/accesibilidad`                                             |
+| Utilidades                | `/buscar`, `not-found`, `error`                                                                                              |
 
 **Femenino / cantera:** mismos patrones de ruta con prefijo o segmento (`/equipo/femenino`, `/equipo/cantera/...`) y feature flag o datos vacíos hasta que exista contenido.
 
@@ -164,12 +164,12 @@ Tomado del requisito; usar como criterios de aceptación en revisiones:
 
 ## 10. Riesgos y dependencias
 
-| Riesgo | Mitigación |
-|--------|------------|
-| Alcance del sitemap vs tiempo | Stub de página con lista de enlaces “próximamente” solo donde el requisito permita landings vacías |
-| Duplicación partido vs ticketing | Una sola entidad `Partido`; `TicketProduct` referencia `match_id` |
-| CMS distinto al modelo mental | Mapeo explícito CMS → tipos TS en `lib/cms` |
-| SEO multilenguaje | Hreflang y slugs planificados antes de mucho contenido indexado (V1) |
+| Riesgo                           | Mitigación                                                                                         |
+| -------------------------------- | -------------------------------------------------------------------------------------------------- |
+| Alcance del sitemap vs tiempo    | Stub de página con lista de enlaces “próximamente” solo donde el requisito permita landings vacías |
+| Duplicación partido vs ticketing | Una sola entidad `Partido`; `TicketProduct` referencia `match_id`                                  |
+| CMS distinto al modelo mental    | Mapeo explícito CMS → tipos TS en `lib/cms`                                                        |
+| SEO multilenguaje                | Hreflang y slugs planificados antes de mucho contenido indexado (V1)                               |
 
 ---
 

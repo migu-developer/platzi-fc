@@ -9,10 +9,7 @@ export default function TerminosPage() {
   return (
     <CmsPage
       section="legal-terminos"
-      breadcrumbs={[
-        { label: 'Legal' },
-        { label: 'Terminos y Condiciones' },
-      ]}
+      breadcrumbs={[{ label: 'Legal' }, { label: 'Terminos y Condiciones' }]}
       fallbackTitle="Terminos y Condiciones"
       fallbackDescription="Terminos y condiciones de uso del sitio web oficial de Platzi FC."
     />

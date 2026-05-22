@@ -54,9 +54,7 @@ export default async function PerfilPage() {
       {/* Mis preferencias */}
       <section>
         <h2 className="font-(family-name:--font-heading) text-xl font-bold">Mis preferencias</h2>
-        <p className="mt-1 text-sm text-muted-foreground">
-          Personaliza tu experiencia como fan
-        </p>
+        <p className="mt-1 text-sm text-muted-foreground">Personaliza tu experiencia como fan</p>
 
         <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           <Card>
@@ -135,9 +133,7 @@ export default async function PerfilPage() {
 
         <div className="mt-6 rounded-xl border border-dashed border-border p-12 text-center">
           <Bookmark className="mx-auto h-8 w-8 text-muted-foreground" />
-          <p className="mt-3 text-muted-foreground">
-            Aun no has guardado contenido.
-          </p>
+          <p className="mt-3 text-muted-foreground">Aun no has guardado contenido.</p>
           <p className="mt-1 text-sm text-muted-foreground">
             Explora noticias y media para guardar tus favoritos.
           </p>

@@ -48,7 +48,10 @@ export function Breadcrumbs({ items }: BreadcrumbsProps) {
               <li key={item.label} className="inline-flex items-center gap-1">
                 <ChevronRight className="h-3.5 w-3.5" aria-hidden="true" />
                 {isLast || !item.href ? (
-                  <span aria-current={isLast ? 'page' : undefined} className="font-medium text-foreground">
+                  <span
+                    aria-current={isLast ? 'page' : undefined}
+                    className="font-medium text-foreground"
+                  >
                     {item.label}
                   </span>
                 ) : (

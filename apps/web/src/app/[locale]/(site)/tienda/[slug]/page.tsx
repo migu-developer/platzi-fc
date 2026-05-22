@@ -19,7 +19,13 @@ type ProductData = {
   category?: string
   description?: unknown[]
   images?: Array<{ asset: { _ref: string; url: string } }>
-  variants?: Array<{ name: string; sku?: string; price: number; currency: string; available: boolean }>
+  variants?: Array<{
+    name: string
+    sku?: string
+    price: number
+    currency: string
+    available: boolean
+  }>
   checkoutUrl?: string
   tags?: string[]
   relatedPlayer?: { firstName: string; lastName: string; slug: { current: string } }
@@ -66,12 +72,7 @@ export default async function ProductoDetailPage({ params }: Props) {
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-      <Breadcrumbs
-        items={[
-          { label: 'Tienda', href: '/tienda' },
-          { label: product.name },
-        ]}
-      />
+      <Breadcrumbs items={[{ label: 'Tienda', href: '/tienda' }, { label: product.name }]} />
 
       <div className="grid gap-8 lg:grid-cols-2">
         {/* Images */}
@@ -132,9 +133,7 @@ export default async function ProductoDetailPage({ params }: Props) {
             </p>
           )}
 
-          {product.description && (
-            <PortableText value={product.description} className="mt-4" />
-          )}
+          {product.description && <PortableText value={product.description} className="mt-4" />}
 
           {/* Variants */}
           {product.variants && product.variants.length > 0 && (
@@ -142,13 +141,12 @@ export default async function ProductoDetailPage({ params }: Props) {
               <p className="text-sm font-semibold">Variantes</p>
               <div className="mt-2 flex flex-wrap gap-2">
                 {product.variants.map((v, i) => (
-                  <Card
-                    key={i}
-                    className={`${v.available ? '' : 'opacity-50'}`}
-                  >
+                  <Card key={i} className={`${v.available ? '' : 'opacity-50'}`}>
                     <CardContent className="px-3 py-2 text-center">
                       <p className="text-xs font-medium">{v.name}</p>
-                      <p className="text-sm font-bold">{v.price} {v.currency}</p>
+                      <p className="text-sm font-bold">
+                        {v.price} {v.currency}
+                      </p>
                     </CardContent>
                   </Card>
                 ))}
@@ -169,7 +167,9 @@ export default async function ProductoDetailPage({ params }: Props) {
           {product.tags && product.tags.length > 0 && (
             <div className="mt-6 flex flex-wrap gap-1.5">
               {product.tags.map((tag) => (
-                <Badge key={tag} variant="outline" className="text-xs">{tag}</Badge>
+                <Badge key={tag} variant="outline" className="text-xs">
+                  {tag}
+                </Badge>
               ))}
             </div>
           )}

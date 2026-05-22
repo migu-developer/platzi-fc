@@ -73,7 +73,8 @@ export default async function EntradasPage() {
           </div>
         ) : (
           <div className="mt-4 rounded-card border border-dashed border-border p-8 text-center text-muted-foreground">
-            No hay entradas disponibles por el momento. Los productos de entradas se gestionan desde Sanity CMS.
+            No hay entradas disponibles por el momento. Los productos de entradas se gestionan desde
+            Sanity CMS.
           </div>
         )}
       </section>

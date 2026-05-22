@@ -8,9 +8,7 @@ type SanitySlug = { slug: { current: string }; _updatedAt?: string }
 
 async function fetchSlugs(type: string, filter = ''): Promise<SanitySlug[]> {
   return client
-    .fetch<SanitySlug[]>(
-      groq`*[_type == "${type}" ${filter}] { slug, _updatedAt }`,
-    )
+    .fetch<SanitySlug[]>(groq`*[_type == "${type}" ${filter}] { slug, _updatedAt }`)
     .catch(() => [])
 }
 
@@ -39,15 +37,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   ]
 
   // Dynamic pages from Sanity
-  const [articles, players, matches, competitions, products, galleries] =
-    await Promise.all([
-      fetchSlugs('article', '&& status == "published"'),
-      fetchSlugs('player'),
-      fetchSlugs('match'),
-      fetchSlugs('competition'),
-      fetchSlugs('shopProduct'),
-      fetchSlugs('gallery'),
-    ])
+  const [articles, players, matches, competitions, products, galleries] = await Promise.all([
+    fetchSlugs('article', '&& status == "published"'),
+    fetchSlugs('player'),
+    fetchSlugs('match'),
+    fetchSlugs('competition'),
+    fetchSlugs('shopProduct'),
+    fetchSlugs('gallery'),
+  ])
 
   const dynamicPages: MetadataRoute.Sitemap = [
     ...articles.map((a) => ({

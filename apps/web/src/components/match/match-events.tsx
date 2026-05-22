@@ -42,10 +42,7 @@ function EventIcon({ type }: { type: string }) {
       )
     case 'red_card':
       return (
-        <span
-          className="inline-block h-5 w-3.5 rounded-sm bg-red-600"
-          aria-label="Tarjeta roja"
-        />
+        <span className="inline-block h-5 w-3.5 rounded-sm bg-red-600" aria-label="Tarjeta roja" />
       )
     case 'substitution':
       return (
@@ -115,20 +112,12 @@ export function MatchEvents({ events }: MatchEventsProps) {
 
             {/* Details */}
             <div className="min-w-0 flex-1">
-              {playerName && (
-                <p className="text-sm font-medium leading-tight">
-                  {playerName}
-                </p>
-              )}
+              {playerName && <p className="text-sm font-medium leading-tight">{playerName}</p>}
               {event.type === 'substitution' && playerInName && (
-                <p className="text-xs text-emerald-600">
-                  Entra: {playerInName}
-                </p>
+                <p className="text-xs text-emerald-600">Entra: {playerInName}</p>
               )}
               {event.description && (
-                <p className="text-xs text-muted-foreground">
-                  {event.description}
-                </p>
+                <p className="text-xs text-muted-foreground">{event.description}</p>
               )}
             </div>
           </div>

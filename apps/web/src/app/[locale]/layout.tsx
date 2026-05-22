@@ -62,11 +62,12 @@ export default async function LocaleLayout({ children, params }: Props) {
   const messages = await getMessages()
 
   return (
-    <html lang={locale} className={cn(fontHeading.variable, fontBody.variable, 'font-sans', geist.variable)}>
+    <html
+      lang={locale}
+      className={cn(fontHeading.variable, fontBody.variable, 'font-sans', geist.variable)}
+    >
       <body className="min-h-screen bg-white font-(family-name:--font-body) text-club-dark antialiased">
-        <NextIntlClientProvider messages={messages}>
-          {children}
-        </NextIntlClientProvider>
+        <NextIntlClientProvider messages={messages}>{children}</NextIntlClientProvider>
       </body>
     </html>
   )

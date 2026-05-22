@@ -96,9 +96,15 @@ export function Footer() {
         <div className="flex flex-col items-center justify-between gap-4 text-xs text-gray-500 sm:flex-row">
           <p>&copy; {new Date().getFullYear()} Platzi FC. Todos los derechos reservados.</p>
           <div className="flex gap-4">
-            <Link href="/legal/terminos" className="hover:text-gray-300">Terminos</Link>
-            <Link href="/legal/privacidad" className="hover:text-gray-300">Privacidad</Link>
-            <Link href="/legal/accesibilidad" className="hover:text-gray-300">Accesibilidad</Link>
+            <Link href="/legal/terminos" className="hover:text-gray-300">
+              Terminos
+            </Link>
+            <Link href="/legal/privacidad" className="hover:text-gray-300">
+              Privacidad
+            </Link>
+            <Link href="/legal/accesibilidad" className="hover:text-gray-300">
+              Accesibilidad
+            </Link>
           </div>
         </div>
       </div>

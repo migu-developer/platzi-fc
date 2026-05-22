@@ -15,12 +15,7 @@ describe('Breadcrumbs', () => {
 
   it('renders items', () => {
     render(
-      <Breadcrumbs
-        items={[
-          { label: 'Noticias', href: '/noticias' },
-          { label: 'Articulo' },
-        ]}
-      />,
+      <Breadcrumbs items={[{ label: 'Noticias', href: '/noticias' }, { label: 'Articulo' }]} />,
     )
     expect(screen.getByText('Noticias')).toBeDefined()
     expect(screen.getByText('Articulo')).toBeDefined()

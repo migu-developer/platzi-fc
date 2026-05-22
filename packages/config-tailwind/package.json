@@ -4,5 +4,7 @@
   "private": true,
   "main": "./tailwind.config.ts",
   "types": "./tailwind.config.ts",
-  "files": ["tailwind.config.ts"]
+  "files": [
+    "tailwind.config.ts"
+  ]
 }
